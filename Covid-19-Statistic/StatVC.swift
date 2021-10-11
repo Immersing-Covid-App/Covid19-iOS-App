@@ -43,7 +43,7 @@ class StatVC: UIViewController {
 
 
     private func viewSetup() {
-        view.backgroundColor = UIColor(named: "mainView")
+        view.backgroundColor = UIColor(named: "mainViewColor")
         view.addSubviews(hamburgerMenu, bell)
 
         hamburgerMenu.addSubviews(hamburgerFirst, hamburgerSecond)

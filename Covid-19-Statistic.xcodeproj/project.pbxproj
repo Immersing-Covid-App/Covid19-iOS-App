@@ -10,10 +10,12 @@
 		282936F6270E64EF0038D812 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 282936F5270E64EF0038D812 /* Podfile */; };
 		282936F8270F90010038D812 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282936F7270F90010038D812 /* Support.swift */; };
 		282936FA270F9EF80038D812 /* StatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282936F9270F9EF80038D812 /* StatVC.swift */; };
+		282936FD270FB5FE0038D812 /* GraphikSemibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 282936FC270FB5FE0038D812 /* GraphikSemibold.otf */; };
+		282936FF2710EF780038D812 /* GraphikMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 282936FE2710EF780038D812 /* GraphikMedium.otf */; };
+		282937012710F2A40038D812 /* GraphikRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 282937002710F2A40038D812 /* GraphikRegular.otf */; };
 		28432921270B546F00F8698B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28432920270B546F00F8698B /* AppDelegate.swift */; };
 		28432923270B546F00F8698B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28432922270B546F00F8698B /* SceneDelegate.swift */; };
 		28432925270B546F00F8698B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28432924270B546F00F8698B /* MainVC.swift */; };
-		28432928270B547000F8698B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28432926270B547000F8698B /* Main.storyboard */; };
 		2843292A270B547900F8698B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28432929270B547900F8698B /* Assets.xcassets */; };
 		2843292D270B547900F8698B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2843292B270B547900F8698B /* LaunchScreen.storyboard */; };
 		59FFF8261C2E4616782B57B7 /* Pods_Covid_19_Statistic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B6D821633B99E77B340A09 /* Pods_Covid_19_Statistic.framework */; };
@@ -24,11 +26,13 @@
 		282936F5270E64EF0038D812 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		282936F7270F90010038D812 /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
 		282936F9270F9EF80038D812 /* StatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatVC.swift; sourceTree = "<group>"; };
+		282936FC270FB5FE0038D812 /* GraphikSemibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikSemibold.otf; sourceTree = "<group>"; };
+		282936FE2710EF780038D812 /* GraphikMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikMedium.otf; sourceTree = "<group>"; };
+		282937002710F2A40038D812 /* GraphikRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikRegular.otf; sourceTree = "<group>"; };
 		2843291D270B546F00F8698B /* Covid-19-Statistic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Covid-19-Statistic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28432920270B546F00F8698B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28432922270B546F00F8698B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		28432924270B546F00F8698B /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		28432927270B547000F8698B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28432929270B547900F8698B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2843292C270B547900F8698B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2843292E270B547900F8698B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,6 +52,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		282936FB270FB5E00038D812 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				282936FE2710EF780038D812 /* GraphikMedium.otf */,
+				282936FC270FB5FE0038D812 /* GraphikSemibold.otf */,
+				282937002710F2A40038D812 /* GraphikRegular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		28432914270B546F00F8698B = {
 			isa = PBXGroup;
 			children = (
@@ -69,12 +83,12 @@
 		2843291F270B546F00F8698B /* Covid-19-Statistic */ = {
 			isa = PBXGroup;
 			children = (
+				282936FB270FB5E00038D812 /* Fonts */,
 				28432920270B546F00F8698B /* AppDelegate.swift */,
 				28432922270B546F00F8698B /* SceneDelegate.swift */,
 				28432924270B546F00F8698B /* MainVC.swift */,
 				282936F9270F9EF80038D812 /* StatVC.swift */,
 				282936F7270F90010038D812 /* Support.swift */,
-				28432926270B547000F8698B /* Main.storyboard */,
 				28432929270B547900F8698B /* Assets.xcassets */,
 				2843292B270B547900F8698B /* LaunchScreen.storyboard */,
 				2843292E270B547900F8698B /* Info.plist */,
@@ -162,8 +176,10 @@
 			files = (
 				2843292D270B547900F8698B /* LaunchScreen.storyboard in Resources */,
 				2843292A270B547900F8698B /* Assets.xcassets in Resources */,
+				282936FF2710EF780038D812 /* GraphikMedium.otf in Resources */,
+				282937012710F2A40038D812 /* GraphikRegular.otf in Resources */,
 				282936F6270E64EF0038D812 /* Podfile in Resources */,
-				28432928270B547000F8698B /* Main.storyboard in Resources */,
+				282936FD270FB5FE0038D812 /* GraphikSemibold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,14 +243,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		28432926270B547000F8698B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				28432927270B547000F8698B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2843292B270B547900F8698B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -375,7 +383,6 @@
 				INFOPLIST_FILE = "Covid-19-Statistic/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -405,7 +412,6 @@
 				INFOPLIST_FILE = "Covid-19-Statistic/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
