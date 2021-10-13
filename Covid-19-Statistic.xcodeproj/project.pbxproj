@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		280EAB38271484D100FD0558 /* MainVCFunctional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280EAB37271484D100FD0558 /* MainVCFunctional.swift */; };
+		280EAB4D2716256600FD0558 /* StatVCFunctional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280EAB4C2716256600FD0558 /* StatVCFunctional.swift */; };
 		282936F6270E64EF0038D812 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 282936F5270E64EF0038D812 /* Podfile */; };
 		282936F8270F90010038D812 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282936F7270F90010038D812 /* Support.swift */; };
 		282936FA270F9EF80038D812 /* StatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282936F9270F9EF80038D812 /* StatVC.swift */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		0776C1F97EC4C79EA2D71C44 /* Pods-Covid-19-Statistic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covid-19-Statistic.release.xcconfig"; path = "Target Support Files/Pods-Covid-19-Statistic/Pods-Covid-19-Statistic.release.xcconfig"; sourceTree = "<group>"; };
+		280EAB37271484D100FD0558 /* MainVCFunctional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCFunctional.swift; sourceTree = "<group>"; };
+		280EAB4C2716256600FD0558 /* StatVCFunctional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatVCFunctional.swift; sourceTree = "<group>"; };
 		282936F5270E64EF0038D812 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		282936F7270F90010038D812 /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
 		282936F9270F9EF80038D812 /* StatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatVC.swift; sourceTree = "<group>"; };
@@ -52,6 +56,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		280EAB4B2716254D00FD0558 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				28432924270B546F00F8698B /* MainVC.swift */,
+				280EAB37271484D100FD0558 /* MainVCFunctional.swift */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
+		280EAB4E271626CD00FD0558 /* StatVC */ = {
+			isa = PBXGroup;
+			children = (
+				282936F9270F9EF80038D812 /* StatVC.swift */,
+				280EAB4C2716256600FD0558 /* StatVCFunctional.swift */,
+			);
+			path = StatVC;
+			sourceTree = "<group>";
+		};
 		282936FB270FB5E00038D812 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,8 +108,8 @@
 				282936FB270FB5E00038D812 /* Fonts */,
 				28432920270B546F00F8698B /* AppDelegate.swift */,
 				28432922270B546F00F8698B /* SceneDelegate.swift */,
-				28432924270B546F00F8698B /* MainVC.swift */,
-				282936F9270F9EF80038D812 /* StatVC.swift */,
+				280EAB4B2716254D00FD0558 /* MainVC */,
+				280EAB4E271626CD00FD0558 /* StatVC */,
 				282936F7270F90010038D812 /* Support.swift */,
 				28432929270B547900F8698B /* Assets.xcassets */,
 				2843292B270B547900F8698B /* LaunchScreen.storyboard */,
@@ -234,8 +256,10 @@
 			files = (
 				28432925270B546F00F8698B /* MainVC.swift in Sources */,
 				282936F8270F90010038D812 /* Support.swift in Sources */,
+				280EAB4D2716256600FD0558 /* StatVCFunctional.swift in Sources */,
 				28432921270B546F00F8698B /* AppDelegate.swift in Sources */,
 				282936FA270F9EF80038D812 /* StatVC.swift in Sources */,
+				280EAB38271484D100FD0558 /* MainVCFunctional.swift in Sources */,
 				28432923270B546F00F8698B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,6 +15,10 @@ class MainVC: UIViewController {
         viewSetup()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        UITabBar.appearance().barTintColor = .white
+    }
+
     // MARK: - UI elements
 
     private lazy var mainScrollView: UIScrollView = {
@@ -122,8 +126,11 @@ class MainVC: UIViewController {
         callButtonView.backgroundColor = UIColor(named: "callButtonColor")
         callButtonView.layer.cornerRadius = 24
         callButtonView.clipsToBounds = true
+        let gestureCall = UITapGestureRecognizer(target: self, action: #selector(call))
+        callButtonView.addGestureRecognizer(gestureCall)
         return callButtonView
     }()
+
 
     private lazy var smsButtonView: UIView = {
         let smsButtonView = UIView()
