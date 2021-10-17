@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import TinyConstraints
+import Charts
 
 class StatVC: UIViewController {
 
@@ -22,6 +24,14 @@ class StatVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         UITabBar.appearance().barTintColor = .white
+        if #available(iOS 15.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .white
+            let tabBar = tabBarController?.tabBar
+            tabBar!.standardAppearance = appearance
+            tabBar!.scrollEdgeAppearance = tabBar!.standardAppearance
+        }
     }
 
     // MARK: - UI elements
@@ -317,11 +327,63 @@ class StatVC: UIViewController {
         chartTitle.textColor = UIColor(named: "mainViewColor")
         return chartTitle
     }()
+
+    private lazy var barChart: BarChartView = {
+        let barChart = BarChartView()
+        barChart.leftAxis.axisMinimum = 0
+        barChart.leftAxis.valueFormatter = MyCustomAxisValueFormatter()
+        barChart.legend.enabled = false
+        barChart.rightAxis.enabled = false
+        barChart.xAxis.labelPosition = .bottom
+        barChart.xAxis.gridColor = .clear
+        barChart.xAxis.gridLineWidth = 1.5
+                barChart.xAxis.axisLineWidth = 0
+                barChart.leftAxis.axisLineWidth = 0
+        barChart.xAxis.drawGridLinesEnabled = false
+        barChart.leftAxis.gridLineDashLengths = [4]
+        barChart.leftAxis.gridColor = .lightGray
+        barChart.doubleTapToZoomEnabled = false
+        barChart.highlightPerTapEnabled = false
+        barChart.xAxis.axisLineColor = .red
+        barChart.highlightPerDragEnabled = false
+
+        return barChart
+    }()
+
+
+
+    private func chartCreate() {
+
+        let entry: [BarChartDataEntry] = [BarChartDataEntry(x: 1, y: 3000),
+                                          BarChartDataEntry(x: 2, y: 3000),
+                                          BarChartDataEntry(x: 3, y: 5000),
+                                          BarChartDataEntry(x: 4, y: 4900),
+                                          BarChartDataEntry(x: 5, y: 2390),
+                                          BarChartDataEntry(x: 6, y: 200),
+                                          BarChartDataEntry(x: 7, y: 6900)]
+
+
+        let dataSet = BarChartDataSet(entries: entry)
+        let data = BarChartData(dataSet: dataSet)
+        data.barWidth = 0.2
+        dataSet.colors = [.red]
+        barChart.data = data
+    }
+
+
+
+
+
+
+
     
     
     
 
 }
+
+
+
 
 // MARK: - Actions
 extension StatVC {
@@ -360,7 +422,9 @@ extension StatVC {
 
         seriousView.addSubviews(seriousTitle, seriousNumbers)
 
-        chartView.addSubviews(chartTitle)
+        chartView.addSubviews(chartTitle, barChart)
+
+        chartCreate()
 
 
 
@@ -368,8 +432,18 @@ extension StatVC {
         // MARK: - Constraints
 
         // Main View
+//        mainScrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+//        mainScrollView.edgesToSuperview(excluding: .top)
+
+        mainScrollView.translatesAutoresizingMaskIntoConstraints = false
         mainScrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        mainScrollView.edgesToSuperview(excluding: .top)
+        mainScrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        mainScrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+
+
+// TODO: поместить заглушку
+        
+        mainScrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
 
         mainView.topToSuperview()
 
@@ -483,7 +557,7 @@ extension StatVC {
         seriousNumbers.bottomToSuperview(offset: -10)
         seriousNumbers.leftToSuperview(offset: 12)
 
-        chartView.topToBottom(of: recoveredAndActiveAndSeriousStackView, offset: 42)
+        chartView.topToBottom(of: recoveredAndActiveAndSeriousStackView, offset: 24)
         chartView.leftToSuperview()
         chartView.rightToSuperview()
         chartView.bottomToSuperview()
@@ -491,6 +565,14 @@ extension StatVC {
 
         chartTitle.topToSuperview(offset: 39)
         chartTitle.leftToSuperview(offset: 24)
+
+        barChart.topToBottom(of: chartTitle, offset: 24)
+        barChart.leftToSuperview(offset: 40)
+        barChart.rightToSuperview(offset: -40)
+        barChart.bottomToSuperview(offset: -40)
+
+
+
 
 
 
