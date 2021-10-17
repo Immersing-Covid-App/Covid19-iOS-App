@@ -12,7 +12,6 @@ import Charts
 class StatVC: UIViewController {
 
     private var isGlobal: Bool = true
-
     private var isToday: Bool = false
     private var isYesterday: Bool = false
     private var isTotal: Bool = true
@@ -330,60 +329,42 @@ class StatVC: UIViewController {
 
     private lazy var barChart: BarChartView = {
         let barChart = BarChartView()
-        barChart.leftAxis.axisMinimum = 0
-        barChart.leftAxis.valueFormatter = MyCustomAxisValueFormatter()
         barChart.legend.enabled = false
-        barChart.rightAxis.enabled = false
-        barChart.xAxis.labelPosition = .bottom
-        barChart.xAxis.gridColor = .clear
-        barChart.xAxis.gridLineWidth = 1.5
-                barChart.xAxis.axisLineWidth = 0
-                barChart.leftAxis.axisLineWidth = 0
-        barChart.xAxis.drawGridLinesEnabled = false
-        barChart.leftAxis.gridLineDashLengths = [4]
-        barChart.leftAxis.gridColor = .lightGray
         barChart.doubleTapToZoomEnabled = false
         barChart.highlightPerTapEnabled = false
-        barChart.xAxis.axisLineColor = .red
         barChart.highlightPerDragEnabled = false
-
+        barChart.rightAxis.enabled = false
+        // левая шкала
+        let leftAxis = barChart.leftAxis
+        leftAxis.axisMinimum = 0
+        leftAxis.axisLineWidth = 0
+        leftAxis.gridLineDashLengths = [4]
+        leftAxis.gridColor = UIColor(named: "gridColor")!
+        leftAxis.labelFont = UIFont(name: "Graphik-Regular", size: 10)!
+        leftAxis.labelTextColor = UIColor(named: "axisColor")!
+        leftAxis.valueFormatter = CustomLeftAxisValueFormatter()
+        // нижняя шкала
+        let xAxis = barChart.xAxis
+        xAxis.labelPosition = .bottom
+        xAxis.gridColor = .clear
+        xAxis.gridLineWidth = 1.5
+        xAxis.axisLineWidth = 0
+        xAxis.drawGridLinesEnabled = false
+        xAxis.labelFont = UIFont(name: "Graphik-Regular", size: 10)!
+        xAxis.labelTextColor = UIColor(named: "axisColor")!
+        xAxis.valueFormatter = CustomXAxisValueFormatter()
         return barChart
     }()
 
-
-
-    private func chartCreate() {
-
-        let entry: [BarChartDataEntry] = [BarChartDataEntry(x: 1, y: 3000),
-                                          BarChartDataEntry(x: 2, y: 3000),
-                                          BarChartDataEntry(x: 3, y: 5000),
-                                          BarChartDataEntry(x: 4, y: 4900),
-                                          BarChartDataEntry(x: 5, y: 2390),
-                                          BarChartDataEntry(x: 6, y: 200),
-                                          BarChartDataEntry(x: 7, y: 6900)]
-
-
+    private func chartCreate(entry: [BarChartDataEntry]) {
         let dataSet = BarChartDataSet(entries: entry)
         let data = BarChartData(dataSet: dataSet)
         data.barWidth = 0.2
-        dataSet.colors = [.red]
+        dataSet.colors = [UIColor(named: "barColor")!]
+        dataSet.valueColors = [NSUIColor(cgColor: UIColor(named: "mainViewColor")!.cgColor)]
         barChart.data = data
     }
-
-
-
-
-
-
-
-    
-    
-    
-
 }
-
-
-
 
 // MARK: - Actions
 extension StatVC {
@@ -424,25 +405,15 @@ extension StatVC {
 
         chartView.addSubviews(chartTitle, barChart)
 
-        chartCreate()
-
-
-
+        chartCreate(entry: entry)
 
         // MARK: - Constraints
 
         // Main View
-//        mainScrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-//        mainScrollView.edgesToSuperview(excluding: .top)
-
         mainScrollView.translatesAutoresizingMaskIntoConstraints = false
         mainScrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         mainScrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         mainScrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-
-
-// TODO: поместить заглушку
-        
         mainScrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
 
         mainView.topToSuperview()
@@ -570,18 +541,6 @@ extension StatVC {
         barChart.leftToSuperview(offset: 40)
         barChart.rightToSuperview(offset: -40)
         barChart.bottomToSuperview(offset: -40)
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
 
@@ -644,7 +603,3 @@ extension StatVC {
         yesterdayButton.setTitleColor(.white, for: .normal)
     }
 }
-
-
-
-

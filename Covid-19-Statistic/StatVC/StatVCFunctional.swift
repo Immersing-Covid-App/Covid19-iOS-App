@@ -7,21 +7,12 @@
 
 import Foundation
 import UIKit
+import Charts
 
-extension StatVC {
-    // методы переключения switch
-
-//    @objc func myCountryTap() {
-//        print(1)
-//        let animation = CAKeyframeAnimation()
-//        let pathArray = [[NSValue(cgPoint: CGPoint(x: globalLabel.center.x, y: globalLabel.center.y))]]
-//        animation.keyPath = "position"
-//        animation.values = pathArray
-//        animation.duration = 5.0
-//        currentSwitchView.layer.add(animation, forKey: "position")
-//    }
-
-//    @objc func globalTap() {
-//        print(2)
-//    }
-}
+let entry: [BarChartDataEntry] = [BarChartDataEntry(x: 1, y: 3000),
+                                  BarChartDataEntry(x: 2, y: 3000),
+                                  BarChartDataEntry(x: 3, y: 5000),
+                                  BarChartDataEntry(x: 4, y: 4900),
+                                  BarChartDataEntry(x: 5, y: 2390),
+                                  BarChartDataEntry(x: 6, y: 200),
+                                  BarChartDataEntry(x: 7, y: 6900)]
