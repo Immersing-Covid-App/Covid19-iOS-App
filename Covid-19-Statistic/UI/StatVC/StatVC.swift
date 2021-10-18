@@ -30,8 +30,20 @@ class StatVC: UIViewController {
             let tabBar = tabBarController?.tabBar
             tabBar!.standardAppearance = appearance
             tabBar!.scrollEdgeAppearance = tabBar!.standardAppearance
+
+            // присваиваем данные
+
+
+            affectedNumbers.text = String(affected.formattedWithSeparator)
+
+            deathNumbers.text = String(death)
+            recoveredNumbers.text = String(recovered)
+            activeNumbers.text = String(active)
+            seriousNumbers.text = String(critical)
+
         }
     }
+
 
     // MARK: - UI elements
 

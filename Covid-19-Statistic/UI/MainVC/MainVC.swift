@@ -13,6 +13,13 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetup()
+
+
+
+        getData(country: currentCountry)
+
+
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {

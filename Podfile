@@ -9,5 +9,6 @@ target 'Covid-19-Statistic' do
 
 pod 'TinyConstraints'
 pod 'Charts'
+pod 'Alamofire', '~> 5.4'
 
 end
