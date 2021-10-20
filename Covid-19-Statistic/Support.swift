@@ -39,3 +39,11 @@ extension Int {
     }
 }
 
+// преобразование данных new
+extension String {
+    func customizeNew() -> Int {
+        let newString = self.dropFirst()
+        return Int(newString) ?? 0
+    }
+}
+

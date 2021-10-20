@@ -15,11 +15,11 @@ class MainVC: UIViewController {
         viewSetup()
 
 
+// получаем данные текущего дня с API и сохраняем в UserDefaults
+        let manager = NetworkManager()
+        manager.getTodayStatisticForCurrentCountry(country: currentCountry)
 
-        getData(country: currentCountry)
 
-
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {

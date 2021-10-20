@@ -6,10 +6,9 @@
 //
 
 import Foundation
-import UIKit
 import Charts
 
-let entry: [BarChartDataEntry] = [BarChartDataEntry(x: 1, y: 3000),
+var entry: [BarChartDataEntry] = [BarChartDataEntry(x: 1, y: 3000),
                                   BarChartDataEntry(x: 2, y: 3000),
                                   BarChartDataEntry(x: 3, y: 5000),
                                   BarChartDataEntry(x: 4, y: 4900),
