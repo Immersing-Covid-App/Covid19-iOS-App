@@ -339,7 +339,7 @@ class StatVC: UIViewController {
         barChart.highlightPerTapEnabled = false
         barChart.highlightPerDragEnabled = false
         barChart.rightAxis.enabled = false
-        barChart.animate(yAxisDuration: 5)
+        barChart.animate(yAxisDuration: 2)
         // левая шкала
         let leftAxis = barChart.leftAxis
         leftAxis.axisMinimum = 0

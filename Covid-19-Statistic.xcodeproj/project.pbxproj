@@ -18,9 +18,9 @@
 		28432921270B546F00F8698B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28432920270B546F00F8698B /* AppDelegate.swift */; };
 		28432923270B546F00F8698B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28432922270B546F00F8698B /* SceneDelegate.swift */; };
 		28432925270B546F00F8698B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28432924270B546F00F8698B /* MainVC.swift */; };
-		2843292A270B547900F8698B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28432929270B547900F8698B /* Assets.xcassets */; };
 		2843292D270B547900F8698B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2843292B270B547900F8698B /* LaunchScreen.storyboard */; };
 		287F34C22720B8D600A9E426 /* SetTodayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F34C12720B8D600A9E426 /* SetTodayData.swift */; };
+		287F34C32720C19100A9E426 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28432929270B547900F8698B /* Assets.xcassets */; };
 		28AD029A271B9BB90009B0F8 /* CustomAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AD0299271B9BB90009B0F8 /* CustomAxis.swift */; };
 		28AD02A8271CEE780009B0F8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AD02A7271CEE780009B0F8 /* NetworkManager.swift */; };
 		28AD02AA271CF58A0009B0F8 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AD02A9271CF58A0009B0F8 /* DataModel.swift */; };
@@ -227,10 +227,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2843292D270B547900F8698B /* LaunchScreen.storyboard in Resources */,
-				2843292A270B547900F8698B /* Assets.xcassets in Resources */,
 				282936FF2710EF780038D812 /* GraphikMedium.otf in Resources */,
 				282937012710F2A40038D812 /* GraphikRegular.otf in Resources */,
 				282936F6270E64EF0038D812 /* Podfile in Resources */,
+				287F34C32720C19100A9E426 /* Assets.xcassets in Resources */,
 				282936FD270FB5FE0038D812 /* GraphikSemibold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
