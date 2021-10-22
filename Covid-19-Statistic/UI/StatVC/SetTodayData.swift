@@ -26,10 +26,9 @@ extension StatVC {
 
             seriousNumbers.text = String(describing: dataTotal!.critical.formattedWithSeparator)
 
-            let newData = dataTotal!.new
-            entry.remove(at: 6)
-            entry.insert(BarChartDataEntry(x: 7, y: Double(newData)), at: 6)
-            chartCreate(entry: entry)
+            SetChartData()
+
+           
         }
     }
 }

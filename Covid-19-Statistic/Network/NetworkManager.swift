@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 let headers = [
     "x-rapidapi-host": apiHost,
@@ -50,8 +51,7 @@ class NetworkManager {
                 let data = try? JSONEncoder().encode(dataTotal)
                 UserDefaults.standard.set(data, forKey: "dataTotal")
 
-
-                
+      
 
             } catch {
                 print(error.localizedDescription)

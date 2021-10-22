@@ -277,8 +277,8 @@ class StatVC: UIViewController {
     
     lazy var recoveredNumbers: UILabel = {
         let recoveredNumbers = UILabel()
-        recoveredNumbers.text = "9 800"
-        recoveredNumbers.font = UIFont(name: "Graphik-Semibold", size: 16)
+        recoveredNumbers.text = "Null"
+        recoveredNumbers.font = UIFont(name: "Graphik-Semibold", size: 12)
         recoveredNumbers.textColor = .white
         return recoveredNumbers
     }()
@@ -294,7 +294,7 @@ class StatVC: UIViewController {
     lazy var activeNumbers: UILabel = {
         let activeNumbers = UILabel()
         activeNumbers.text = "9 800"
-        activeNumbers.font = UIFont(name: "Graphik-Semibold", size: 16)
+        activeNumbers.font = UIFont(name: "Graphik-Semibold", size: 12)
         activeNumbers.textColor = .white
         return activeNumbers
     }()
@@ -310,7 +310,7 @@ class StatVC: UIViewController {
     lazy var seriousNumbers: UILabel = {
         let seriousNumbers = UILabel()
         seriousNumbers.text = "9 800"
-        seriousNumbers.font = UIFont(name: "Graphik-Semibold", size: 16)
+        seriousNumbers.font = UIFont(name: "Graphik-Semibold", size: 12)
         seriousNumbers.textColor = .white
         return seriousNumbers
     }()
@@ -519,18 +519,21 @@ extension StatVC {
         
         recoveredNumbers.bottomToSuperview(offset: -10)
         recoveredNumbers.leftToSuperview(offset: 12)
+        recoveredNumbers.rightToSuperview(offset: -12)
         
         activeTitle.topToSuperview(offset: 16)
         activeTitle.leftToSuperview(offset: 12)
         
         activeNumbers.bottomToSuperview(offset: -10)
         activeNumbers.leftToSuperview(offset: 12)
+        activeNumbers.rightToSuperview(offset: -12)
         
         seriousTitle.topToSuperview(offset: 16)
         seriousTitle.leftToSuperview(offset: 12)
         
         seriousNumbers.bottomToSuperview(offset: -10)
         seriousNumbers.leftToSuperview(offset: 12)
+        seriousNumbers.rightToSuperview(offset: -12)
         
         chartView.topToBottom(of: recoveredAndActiveAndSeriousStackView, offset: 24)
         chartView.leftToSuperview()
