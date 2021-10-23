@@ -16,12 +16,21 @@ extension StatVC {
         if let data = UserDefaults.standard.data(forKey: "dataTotal") {
             let dataTotal = try? JSONDecoder().decode(CovidDataInCurrentTime.self, from: data)
 
+            let chartDataArray = getChartEntry()
+            print(chartDataArray)
+
+            entry = [BarChartDataEntry(x: 0, y: chartDataArray[0]),
+                     BarChartDataEntry(x: 0, y: chartDataArray[1]),
+                     BarChartDataEntry(x: 0, y: chartDataArray[2]),
+                     BarChartDataEntry(x: 0, y: chartDataArray[3]),
+                     BarChartDataEntry(x: 0, y: chartDataArray[4]),
+                     BarChartDataEntry(x: 0, y: chartDataArray[5]),
+                     BarChartDataEntry(x: 0, y: chartDataArray[6]),
+            ]
+
+            
+
             let newData = dataTotal!.new
-            // удаляем из 6 позиции данные
-//            entry.remove(at: 5)
-            // помещаем на 6 позицию данные из 7 позиции
-//            entry.insert(entry[6], at: 5)
-            print(entry[5])
             // удаляем данные из 7 позиции
             entry.remove(at: 6)
             // помещаем в 7 позицию данные текущего дня

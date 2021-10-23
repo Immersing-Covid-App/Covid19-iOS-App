@@ -16,8 +16,10 @@ class MainVC: UIViewController {
 
 
 // получаем данные текущего дня с API и сохраняем в UserDefaults
+
         let manager = NetworkManager()
-        manager.getTodayStatisticForCurrentCountry(country: currentCountry)
+        manager.getTotalStatisticForCurrentCountry(country: currentCountry)
+        errorData()
 
 
     }
@@ -486,4 +488,21 @@ extension MainVC: UIScrollViewDelegate {
             scrollView.contentOffset.y = 0
         }
     }
+}
+
+// Notification
+
+extension MainVC {
+    func errorData() {
+        NotificationCenter.default.addObserver(self, selector: #selector(errorGetData), name: Notification.Name("errorGetData"), object: nil)
+    }
+
+    @objc func errorGetData() {
+        print("данные не получены")
+        let alertVC = UIAlertController(title: "Error", message: "No data received, check your internet connection", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertVC.addAction(action)
+        self.present(alertVC, animated: true, completion: nil)
+    }
+
 }

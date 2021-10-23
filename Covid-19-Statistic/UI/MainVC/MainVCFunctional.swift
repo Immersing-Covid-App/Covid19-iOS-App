@@ -14,7 +14,6 @@ extension MainVC {
 
 // метод звонка
     @objc func call() {
-        print(11)
             let url = URL(string: "tel://\(number)")!
         UIApplication.shared.open(url)
     }

@@ -26,9 +26,6 @@ extension StatVC {
 
             seriousNumbers.text = String(describing: dataTotal!.critical.formattedWithSeparator)
 
-            SetChartData()
-
-           
         }
     }
 }

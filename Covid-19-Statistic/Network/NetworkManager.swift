@@ -18,13 +18,15 @@ class NetworkManager {
 
 
     // метод получения данных выбранной страны за текущую дату
-    func getTodayStatisticForCurrentCountry(country: String) {
+    func getTotalStatisticForCurrentCountry(country: String) {
 
         let currenURL = "https://\(apiHost)/statistics?country=\(country)"
 
         AF.request(currenURL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: HTTPHeaders(headers), interceptor: nil, requestModifier: nil).responseJSON { (responceData) in
 
-            guard let data = responceData.data else { return }
+            guard let data = responceData.data else {
+                NotificationCenter.default.post(name: Notification.Name("errorGetData"), object: nil)
+                return }
 
             do {
                 let covidData = try JSONDecoder().decode(CovidData.self, from: data

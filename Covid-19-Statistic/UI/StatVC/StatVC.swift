@@ -19,6 +19,7 @@ class StatVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetup()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
