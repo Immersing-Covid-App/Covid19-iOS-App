@@ -19,6 +19,8 @@ class StatVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetup()
+        errorData()
+        
 
     }
     
@@ -31,8 +33,10 @@ class StatVC: UIViewController {
             let tabBar = tabBarController?.tabBar
             tabBar!.standardAppearance = appearance
             tabBar!.scrollEdgeAppearance = tabBar!.standardAppearance
-            
-            setTodayData()
+
+
+            // получение данных из UserDefaults и отображение их на VC
+            SetTodayTotalData()
 
         }
         
@@ -167,15 +171,6 @@ class StatVC: UIViewController {
         yesterdayButton.addTarget(self, action: #selector(yesterdayButtonTap), for: .touchUpInside)
         return yesterdayButton
     }()
-    
-    @objc func totalButtonTap() {
-        isToday = false
-        isYesterday = false
-        isTotal = true
-        todayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
-        yesterdayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
-        totalButton.setTitleColor(.white, for: .normal)
-    }
     
     private lazy var dayStackView: UIStackView = {
         let dayStackView = UIStackView()
@@ -592,6 +587,17 @@ extension StatVC {
         myCountryLabel.textColor = .white
         isGlobal = true
     }
+
+    @objc func totalButtonTap() {
+        isToday = false
+        isYesterday = false
+        isTotal = true
+        todayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
+        yesterdayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
+        totalButton.setTitleColor(.white, for: .normal)
+
+        SetTodayTotalData()
+    }
     
     @objc func todayButtonTap() {
         isToday = true
@@ -600,6 +606,8 @@ extension StatVC {
         totalButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         yesterdayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         todayButton.setTitleColor(.white, for: .normal)
+
+        SetTodayData()
     }
     
     @objc func yesterdayButtonTap() {

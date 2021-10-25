@@ -15,17 +15,22 @@ class MainVC: UIViewController {
         viewSetup()
 
 
-// получаем данные текущего дня с API и сохраняем в UserDefaults
-
-        let manager = NetworkManager()
-        manager.getTotalStatisticForCurrentCountry(country: currentCountry)
+        // получаем данные текущего дня с API и сохраняем в UserDefaults
+        let _ = NetworkManager(country: currentCountry, vc: self)
         errorData()
+
+
+
+
+
+
 
 
     }
 
     override func viewWillAppear(_ animated: Bool) {
         UITabBar.appearance().barTintColor = .white
+
     }
 
     // MARK: - UI elements
@@ -490,19 +495,4 @@ extension MainVC: UIScrollViewDelegate {
     }
 }
 
-// Notification
 
-extension MainVC {
-    func errorData() {
-        NotificationCenter.default.addObserver(self, selector: #selector(errorGetData), name: Notification.Name("errorGetData"), object: nil)
-    }
-
-    @objc func errorGetData() {
-        print("данные не получены")
-        let alertVC = UIAlertController(title: "Error", message: "No data received, check your internet connection", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alertVC.addAction(action)
-        self.present(alertVC, animated: true, completion: nil)
-    }
-
-}

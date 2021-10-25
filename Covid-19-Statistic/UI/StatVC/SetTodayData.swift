@@ -2,7 +2,7 @@
 //  SetTodayData.swift
 //  Covid-19-Statistic
 //
-//  Created by Dmitrii Lobanov on 20.10.2021.
+//  Created by Dmitrii Lobanov on 24.10.2021.
 //
 
 import Foundation
@@ -10,22 +10,31 @@ import Charts
 
 extension StatVC {
 
-    func setTodayData() {
+    func SetTodayData() {
         // получаем данные из UserDefaults
-        if let data = UserDefaults.standard.data(forKey: "dataTotal") {
-            let dataTotal = try? JSONDecoder().decode(CovidDataInCurrentTime.self, from: data)
+        guard let todayData = UserDefaults.standard.data(forKey: "dataTotal") else { return }
+        guard let yesterdayData = UserDefaults.standard.data(forKey: "dataYesterday") else { return }
 
-            // присваиваем данные
-            affectedNumbers.text = String(describing: dataTotal!.affected.formattedWithSeparator)
+        // декодируем полученные данные
+        guard let todayDataForSet = try? JSONDecoder().decode(CovidDataInCurrentTime.self, from: todayData) else { return }
 
-            deathNumbers.text = String(describing: dataTotal!.death.formattedWithSeparator)
+        guard let yesterdayDataForSet = try? JSONDecoder().decode(CovidDataInCurrentTime.self, from: yesterdayData) else { return }
 
-            recoveredNumbers.text = String(describing: dataTotal!.recovered.formattedWithSeparator)
 
-            activeNumbers.text = String(describing: dataTotal!.active.formattedWithSeparator)
+        print("отображаем сегодняшние данные")
+        print((todayDataForSet.death, yesterdayDataForSet.death))
+        // присваиваем данные
+        affectedNumbers.text = String(describing: (todayDataForSet.affected - yesterdayDataForSet.affected).formattedWithSeparator)
 
-            seriousNumbers.text = String(describing: dataTotal!.critical.formattedWithSeparator)
+        deathNumbers.text = String(describing: (todayDataForSet.death - yesterdayDataForSet.death).formattedWithSeparator)
 
-        }
+        recoveredNumbers.text = String(describing: (todayDataForSet.recovered - yesterdayDataForSet.recovered).formattedWithSeparator)
+
+        activeNumbers.text = String(describing: (todayDataForSet.active - yesterdayDataForSet.active).formattedWithSeparator)
+
+        seriousNumbers.text = String(describing: (todayDataForSet.critical - yesterdayDataForSet.critical).formattedWithSeparator)
+
+
     }
 }
+

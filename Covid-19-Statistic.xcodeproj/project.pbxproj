@@ -19,10 +19,15 @@
 		28432923270B546F00F8698B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28432922270B546F00F8698B /* SceneDelegate.swift */; };
 		28432925270B546F00F8698B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28432924270B546F00F8698B /* MainVC.swift */; };
 		2843292D270B547900F8698B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2843292B270B547900F8698B /* LaunchScreen.storyboard */; };
-		287F34C22720B8D600A9E426 /* SetTodayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F34C12720B8D600A9E426 /* SetTodayData.swift */; };
+		287F34C22720B8D600A9E426 /* SetTodayTotalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F34C12720B8D600A9E426 /* SetTodayTotalData.swift */; };
 		287F34C42720C22B00A9E426 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28432929270B547900F8698B /* Assets.xcassets */; };
 		287F34C62722306800A9E426 /* SetChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F34C52722306800A9E426 /* SetChartData.swift */; };
 		287F34CA272377FB00A9E426 /* BarCornerManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F34C9272377FB00A9E426 /* BarCornerManual.swift */; };
+		287F34CC2724BACA00A9E426 /* GetTotalTodayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F34CB2724BACA00A9E426 /* GetTotalTodayData.swift */; };
+		287F34CE2724BC1B00A9E426 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F34CD2724BC1B00A9E426 /* API.swift */; };
+		287F34D02724BC8B00A9E426 /* GetYesterdayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F34CF2724BC8B00A9E426 /* GetYesterdayData.swift */; };
+		287F34D22724C40400A9E426 /* SetTodayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F34D12724C40400A9E426 /* SetTodayData.swift */; };
+		287F34D627262A4700A9E426 /* ErrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F34D527262A4700A9E426 /* ErrorData.swift */; };
 		28AD029A271B9BB90009B0F8 /* CustomAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AD0299271B9BB90009B0F8 /* CustomAxis.swift */; };
 		28AD02A8271CEE780009B0F8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AD02A7271CEE780009B0F8 /* NetworkManager.swift */; };
 		28AD02AA271CF58A0009B0F8 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AD02A9271CF58A0009B0F8 /* DataModel.swift */; };
@@ -46,9 +51,14 @@
 		28432929270B547900F8698B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2843292C270B547900F8698B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2843292E270B547900F8698B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		287F34C12720B8D600A9E426 /* SetTodayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTodayData.swift; sourceTree = "<group>"; };
+		287F34C12720B8D600A9E426 /* SetTodayTotalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTodayTotalData.swift; sourceTree = "<group>"; };
 		287F34C52722306800A9E426 /* SetChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetChartData.swift; sourceTree = "<group>"; };
 		287F34C9272377FB00A9E426 /* BarCornerManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCornerManual.swift; sourceTree = "<group>"; };
+		287F34CB2724BACA00A9E426 /* GetTotalTodayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTotalTodayData.swift; sourceTree = "<group>"; };
+		287F34CD2724BC1B00A9E426 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		287F34CF2724BC8B00A9E426 /* GetYesterdayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetYesterdayData.swift; sourceTree = "<group>"; };
+		287F34D12724C40400A9E426 /* SetTodayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTodayData.swift; sourceTree = "<group>"; };
+		287F34D527262A4700A9E426 /* ErrorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorData.swift; sourceTree = "<group>"; };
 		28AD0299271B9BB90009B0F8 /* CustomAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAxis.swift; sourceTree = "<group>"; };
 		28AD02A7271CEE780009B0F8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		28AD02A9271CF58A0009B0F8 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -81,7 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				282936F9270F9EF80038D812 /* StatVC.swift */,
-				287F34C12720B8D600A9E426 /* SetTodayData.swift */,
+				287F34C12720B8D600A9E426 /* SetTodayTotalData.swift */,
+				287F34D12724C40400A9E426 /* SetTodayData.swift */,
 				287F34C52722306800A9E426 /* SetChartData.swift */,
 				280EAB4C2716256600FD0558 /* StatVCFunctional.swift */,
 				28AD0299271B9BB90009B0F8 /* CustomAxis.swift */,
@@ -138,7 +149,11 @@
 		287F34C0271F8C0C00A9E426 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				287F34CD2724BC1B00A9E426 /* API.swift */,
 				28AD02A7271CEE780009B0F8 /* NetworkManager.swift */,
+				287F34CB2724BACA00A9E426 /* GetTotalTodayData.swift */,
+				287F34CF2724BC8B00A9E426 /* GetYesterdayData.swift */,
+				287F34D527262A4700A9E426 /* ErrorData.swift */,
 				28AD02A9271CF58A0009B0F8 /* DataModel.swift */,
 			);
 			path = Network;
@@ -294,15 +309,20 @@
 				28AD02A8271CEE780009B0F8 /* NetworkManager.swift in Sources */,
 				28432925270B546F00F8698B /* MainVC.swift in Sources */,
 				282936F8270F90010038D812 /* Support.swift in Sources */,
+				287F34CC2724BACA00A9E426 /* GetTotalTodayData.swift in Sources */,
+				287F34CE2724BC1B00A9E426 /* API.swift in Sources */,
+				287F34D02724BC8B00A9E426 /* GetYesterdayData.swift in Sources */,
+				287F34D627262A4700A9E426 /* ErrorData.swift in Sources */,
 				28AD029A271B9BB90009B0F8 /* CustomAxis.swift in Sources */,
 				280EAB4D2716256600FD0558 /* StatVCFunctional.swift in Sources */,
 				287F34C62722306800A9E426 /* SetChartData.swift in Sources */,
 				287F34CA272377FB00A9E426 /* BarCornerManual.swift in Sources */,
 				28AD02AA271CF58A0009B0F8 /* DataModel.swift in Sources */,
+				287F34D22724C40400A9E426 /* SetTodayData.swift in Sources */,
 				28432921270B546F00F8698B /* AppDelegate.swift in Sources */,
 				282936FA270F9EF80038D812 /* StatVC.swift in Sources */,
 				280EAB38271484D100FD0558 /* MainVCFunctional.swift in Sources */,
-				287F34C22720B8D600A9E426 /* SetTodayData.swift in Sources */,
+				287F34C22720B8D600A9E426 /* SetTodayTotalData.swift in Sources */,
 				28432923270B546F00F8698B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
