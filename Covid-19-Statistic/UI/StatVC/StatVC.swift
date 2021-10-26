@@ -20,8 +20,6 @@ class StatVC: UIViewController {
         super.viewDidLoad()
         viewSetup()
         errorData()
-        
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,7 +34,14 @@ class StatVC: UIViewController {
 
 
             // получение данных из UserDefaults и отображение их на VC
-            SetTodayTotalData()
+            isToday = false
+            isYesterday = false
+            isTotal = true
+            todayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
+            yesterdayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
+            totalButton.setTitleColor(.white, for: .normal)
+
+            setTodayTotalData()
 
         }
         
@@ -596,7 +601,7 @@ extension StatVC {
         yesterdayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         totalButton.setTitleColor(.white, for: .normal)
 
-        SetTodayTotalData()
+        setTodayTotalData()
     }
     
     @objc func todayButtonTap() {
@@ -607,7 +612,7 @@ extension StatVC {
         yesterdayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         todayButton.setTitleColor(.white, for: .normal)
 
-        SetTodayData()
+        setTodayData()
     }
     
     @objc func yesterdayButtonTap() {
@@ -617,5 +622,7 @@ extension StatVC {
         totalButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         todayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         yesterdayButton.setTitleColor(.white, for: .normal)
+
+        setYesterdayData()
     }
 }

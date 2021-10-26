@@ -9,19 +9,11 @@ import Foundation
 import Alamofire
 import UIKit
 
-let headers = [
-    "x-rapidapi-host": apiHost,
-    "x-rapidapi-key": apiKey
-]
-
 class NetworkManager {
 
     init(country: String, vc: UIViewController) {
-        self.getTotalTodayDataForCurrentCountry(country: country)
+        self.getTodayDataForCurrentCountry(country: country)
         self.getYesterdayDataForCurrentCountry(country: country)
+        self.getBeforeYesterdayDataForCurrentCountry(country: country)
     }
-
-
 }
-
-

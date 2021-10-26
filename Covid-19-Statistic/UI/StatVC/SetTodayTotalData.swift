@@ -10,9 +10,9 @@ import Charts
 
 extension StatVC {
 
-    func SetTodayTotalData() {
+    func setTodayTotalData() {
         // получаем данные из UserDefaults
-        if let data = UserDefaults.standard.data(forKey: "dataTotal") {
+        if let data = UserDefaults.standard.data(forKey: "dataToday") {
             let dataTotal = try? JSONDecoder().decode(CovidDataInCurrentTime.self, from: data)
 
             // присваиваем данные
@@ -25,7 +25,6 @@ extension StatVC {
             activeNumbers.text = String(describing: dataTotal!.active.formattedWithSeparator)
 
             seriousNumbers.text = String(describing: dataTotal!.critical.formattedWithSeparator)
-
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  GetTotalTodayData.swift
+//  GetTodayData.swift
 //  Covid-19-Statistic
 //
 //  Created by Dmitrii Lobanov on 24.10.2021.
@@ -11,7 +11,7 @@ import Alamofire
 extension NetworkManager {
 
     // метод получения данных выбранной страны за текущую дату
-    func getTotalTodayDataForCurrentCountry(country: String) {
+    func getTodayDataForCurrentCountry(country: String) {
 
         let currenURL = "https://\(apiHost)/statistics?country=\(country)"
 
@@ -37,19 +37,16 @@ extension NetworkManager {
                 dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZ"
                 guard let date = dateFormatter.date(from: stringDate) else { return }
 
-
                 guard let gotDataNew = gotData[0].cases?.new else { return }
                 let newData = gotDataNew.customizeNew()
 
-
-
                 // создаем объект с данными
                 let dataTotal = CovidDataInCurrentTime(new: newData, active: gotDataActive, critical: gotDataCritical, recovered: gotDataRecovered, affected: gotDataTotal, death: gotDataDeath, date: date)
+
                 //сохраняем в память
-
-
-                    let data = try? JSONEncoder().encode(dataTotal)
-                        UserDefaults.standard.set(data, forKey: "dataTotal")
+                let data = try? JSONEncoder().encode(dataTotal)
+                UserDefaults.standard.set(data, forKey: "dataToday")
+                print("данные dataToday успешно обновлены")
             } catch {
                 print(error.localizedDescription)
             }

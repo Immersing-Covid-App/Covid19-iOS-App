@@ -14,23 +14,17 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         viewSetup()
 
-
-        // получаем данные текущего дня с API и сохраняем в UserDefaults
-        let _ = NetworkManager(country: currentCountry, vc: self)
-        errorData()
-
-
-
-
-
-
+        // получаем и сохраняем все данные
+        DispatchQueue.global(qos: .background).async {
+            let _ = NetworkManager(country: currentCountry, vc: self)
+            self.errorData()
+        }
 
 
     }
 
     override func viewWillAppear(_ animated: Bool) {
         UITabBar.appearance().barTintColor = .white
-
     }
 
     // MARK: - UI elements
