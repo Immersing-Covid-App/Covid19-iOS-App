@@ -30,6 +30,9 @@ extension StatVC {
         ]
 
         // генерируем чарт
+
         chartCreate(entry: entry)
+        barChart.animate(yAxisDuration: 2)
     }
+
 }

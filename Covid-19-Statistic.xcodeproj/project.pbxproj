@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		280EAB38271484D100FD0558 /* MainVCFunctional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280EAB37271484D100FD0558 /* MainVCFunctional.swift */; };
-		280EAB4D2716256600FD0558 /* StatVCFunctional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280EAB4C2716256600FD0558 /* StatVCFunctional.swift */; };
 		2810E4DD2728A93C007E2115 /* GetYesterdayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810E4DC2728A93C007E2115 /* GetYesterdayData.swift */; };
 		2810E4DF2728AA64007E2115 /* SetYesterdayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810E4DE2728AA64007E2115 /* SetYesterdayData.swift */; };
 		2810E4E12728B7CE007E2115 /* GetBeforeYesterdayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810E4E02728B7CE007E2115 /* GetBeforeYesterdayData.swift */; };
@@ -23,6 +22,14 @@
 		28432923270B546F00F8698B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28432922270B546F00F8698B /* SceneDelegate.swift */; };
 		28432925270B546F00F8698B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28432924270B546F00F8698B /* MainVC.swift */; };
 		2843292D270B547900F8698B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2843292B270B547900F8698B /* LaunchScreen.storyboard */; };
+		2869ACF8272A00ED009203F7 /* GetGlobalTodayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869ACF7272A00ED009203F7 /* GetGlobalTodayData.swift */; };
+		2869ACFC272A11DB009203F7 /* SetTodayGlobalTotalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869ACFB272A11DB009203F7 /* SetTodayGlobalTotalData.swift */; };
+		2869ACFE272A1480009203F7 /* GetGlobalYesterdayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869ACFD272A1480009203F7 /* GetGlobalYesterdayData.swift */; };
+		2869AD00272A14EE009203F7 /* GetGlobalBeforeYesterdayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869ACFF272A14EE009203F7 /* GetGlobalBeforeYesterdayData.swift */; };
+		2869AD02272A1561009203F7 /* GetGlobalDataForChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869AD01272A1561009203F7 /* GetGlobalDataForChart.swift */; };
+		2869AD05272A1654009203F7 /* SetTodayGlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869AD04272A1654009203F7 /* SetTodayGlobalData.swift */; };
+		2869AD07272A1772009203F7 /* SetYesterdayGlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869AD06272A1772009203F7 /* SetYesterdayGlobalData.swift */; };
+		2869AD09272A1815009203F7 /* SetGlobalChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869AD08272A1815009203F7 /* SetGlobalChartData.swift */; };
 		287F34C22720B8D600A9E426 /* SetTodayTotalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F34C12720B8D600A9E426 /* SetTodayTotalData.swift */; };
 		287F34C42720C22B00A9E426 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28432929270B547900F8698B /* Assets.xcassets */; };
 		287F34C62722306800A9E426 /* SetChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F34C52722306800A9E426 /* SetChartData.swift */; };
@@ -40,7 +47,6 @@
 /* Begin PBXFileReference section */
 		0776C1F97EC4C79EA2D71C44 /* Pods-Covid-19-Statistic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Covid-19-Statistic.release.xcconfig"; path = "Target Support Files/Pods-Covid-19-Statistic/Pods-Covid-19-Statistic.release.xcconfig"; sourceTree = "<group>"; };
 		280EAB37271484D100FD0558 /* MainVCFunctional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCFunctional.swift; sourceTree = "<group>"; };
-		280EAB4C2716256600FD0558 /* StatVCFunctional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatVCFunctional.swift; sourceTree = "<group>"; };
 		2810E4DC2728A93C007E2115 /* GetYesterdayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetYesterdayData.swift; sourceTree = "<group>"; };
 		2810E4DE2728AA64007E2115 /* SetYesterdayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetYesterdayData.swift; sourceTree = "<group>"; };
 		2810E4E02728B7CE007E2115 /* GetBeforeYesterdayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBeforeYesterdayData.swift; sourceTree = "<group>"; };
@@ -58,6 +64,14 @@
 		28432929270B547900F8698B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2843292C270B547900F8698B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2843292E270B547900F8698B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2869ACF7272A00ED009203F7 /* GetGlobalTodayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGlobalTodayData.swift; sourceTree = "<group>"; };
+		2869ACFB272A11DB009203F7 /* SetTodayGlobalTotalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTodayGlobalTotalData.swift; sourceTree = "<group>"; };
+		2869ACFD272A1480009203F7 /* GetGlobalYesterdayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGlobalYesterdayData.swift; sourceTree = "<group>"; };
+		2869ACFF272A14EE009203F7 /* GetGlobalBeforeYesterdayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGlobalBeforeYesterdayData.swift; sourceTree = "<group>"; };
+		2869AD01272A1561009203F7 /* GetGlobalDataForChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGlobalDataForChart.swift; sourceTree = "<group>"; };
+		2869AD04272A1654009203F7 /* SetTodayGlobalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTodayGlobalData.swift; sourceTree = "<group>"; };
+		2869AD06272A1772009203F7 /* SetYesterdayGlobalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetYesterdayGlobalData.swift; sourceTree = "<group>"; };
+		2869AD08272A1815009203F7 /* SetGlobalChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGlobalChartData.swift; sourceTree = "<group>"; };
 		287F34C12720B8D600A9E426 /* SetTodayTotalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTodayTotalData.swift; sourceTree = "<group>"; };
 		287F34C52722306800A9E426 /* SetChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetChartData.swift; sourceTree = "<group>"; };
 		287F34C9272377FB00A9E426 /* BarCornerManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCornerManual.swift; sourceTree = "<group>"; };
@@ -97,11 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				282936F9270F9EF80038D812 /* StatVC.swift */,
-				287F34C12720B8D600A9E426 /* SetTodayTotalData.swift */,
-				287F34D12724C40400A9E426 /* SetTodayData.swift */,
-				2810E4DE2728AA64007E2115 /* SetYesterdayData.swift */,
-				287F34C52722306800A9E426 /* SetChartData.swift */,
-				280EAB4C2716256600FD0558 /* StatVCFunctional.swift */,
+				2869AD03272A160D009203F7 /* SetDataGlobal */,
+				2869ACF9272A10B5009203F7 /* SetDataCurrentCountry */,
 				28AD0299271B9BB90009B0F8 /* CustomAxis.swift */,
 				287F34C9272377FB00A9E426 /* BarCornerManual.swift */,
 			);
@@ -153,15 +164,57 @@
 			path = "Covid-19-Statistic";
 			sourceTree = "<group>";
 		};
+		2869ACF6272A00AF009203F7 /* GetDataCurrentCountry */ = {
+			isa = PBXGroup;
+			children = (
+				287F34CB2724BACA00A9E426 /* GetTodayData.swift */,
+				2810E4DC2728A93C007E2115 /* GetYesterdayData.swift */,
+				2810E4E02728B7CE007E2115 /* GetBeforeYesterdayData.swift */,
+				2810E4E22728C409007E2115 /* GetDataForChart.swift */,
+			);
+			path = GetDataCurrentCountry;
+			sourceTree = "<group>";
+		};
+		2869ACF9272A10B5009203F7 /* SetDataCurrentCountry */ = {
+			isa = PBXGroup;
+			children = (
+				287F34C12720B8D600A9E426 /* SetTodayTotalData.swift */,
+				287F34D12724C40400A9E426 /* SetTodayData.swift */,
+				2810E4DE2728AA64007E2115 /* SetYesterdayData.swift */,
+				287F34C52722306800A9E426 /* SetChartData.swift */,
+			);
+			path = SetDataCurrentCountry;
+			sourceTree = "<group>";
+		};
+		2869ACFA272A10E8009203F7 /* GetDataGlobal */ = {
+			isa = PBXGroup;
+			children = (
+				2869ACF7272A00ED009203F7 /* GetGlobalTodayData.swift */,
+				2869ACFD272A1480009203F7 /* GetGlobalYesterdayData.swift */,
+				2869ACFF272A14EE009203F7 /* GetGlobalBeforeYesterdayData.swift */,
+				2869AD01272A1561009203F7 /* GetGlobalDataForChart.swift */,
+			);
+			path = GetDataGlobal;
+			sourceTree = "<group>";
+		};
+		2869AD03272A160D009203F7 /* SetDataGlobal */ = {
+			isa = PBXGroup;
+			children = (
+				2869ACFB272A11DB009203F7 /* SetTodayGlobalTotalData.swift */,
+				2869AD04272A1654009203F7 /* SetTodayGlobalData.swift */,
+				2869AD06272A1772009203F7 /* SetYesterdayGlobalData.swift */,
+				2869AD08272A1815009203F7 /* SetGlobalChartData.swift */,
+			);
+			path = SetDataGlobal;
+			sourceTree = "<group>";
+		};
 		287F34C0271F8C0C00A9E426 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				287F34CD2724BC1B00A9E426 /* API.swift */,
 				28AD02A7271CEE780009B0F8 /* NetworkManager.swift */,
-				287F34CB2724BACA00A9E426 /* GetTodayData.swift */,
-				2810E4DC2728A93C007E2115 /* GetYesterdayData.swift */,
-				2810E4E02728B7CE007E2115 /* GetBeforeYesterdayData.swift */,
-				2810E4E22728C409007E2115 /* GetDataForChart.swift */,
+				2869ACFA272A10E8009203F7 /* GetDataGlobal */,
+				2869ACF6272A00AF009203F7 /* GetDataCurrentCountry */,
 				287F34D527262A4700A9E426 /* ErrorData.swift */,
 				28AD02A9271CF58A0009B0F8 /* DataModel.swift */,
 			);
@@ -319,22 +372,29 @@
 				2810E4DF2728AA64007E2115 /* SetYesterdayData.swift in Sources */,
 				2810E4E12728B7CE007E2115 /* GetBeforeYesterdayData.swift in Sources */,
 				28432925270B546F00F8698B /* MainVC.swift in Sources */,
+				2869ACF8272A00ED009203F7 /* GetGlobalTodayData.swift in Sources */,
 				282936F8270F90010038D812 /* Support.swift in Sources */,
 				287F34CC2724BACA00A9E426 /* GetTodayData.swift in Sources */,
+				2869AD07272A1772009203F7 /* SetYesterdayGlobalData.swift in Sources */,
 				287F34CE2724BC1B00A9E426 /* API.swift in Sources */,
 				2810E4DD2728A93C007E2115 /* GetYesterdayData.swift in Sources */,
 				287F34D627262A4700A9E426 /* ErrorData.swift in Sources */,
 				28AD029A271B9BB90009B0F8 /* CustomAxis.swift in Sources */,
-				280EAB4D2716256600FD0558 /* StatVCFunctional.swift in Sources */,
 				287F34C62722306800A9E426 /* SetChartData.swift in Sources */,
+				2869AD02272A1561009203F7 /* GetGlobalDataForChart.swift in Sources */,
+				2869AD05272A1654009203F7 /* SetTodayGlobalData.swift in Sources */,
 				287F34CA272377FB00A9E426 /* BarCornerManual.swift in Sources */,
 				28AD02AA271CF58A0009B0F8 /* DataModel.swift in Sources */,
 				287F34D22724C40400A9E426 /* SetTodayData.swift in Sources */,
+				2869ACFE272A1480009203F7 /* GetGlobalYesterdayData.swift in Sources */,
 				28432921270B546F00F8698B /* AppDelegate.swift in Sources */,
+				2869AD09272A1815009203F7 /* SetGlobalChartData.swift in Sources */,
+				2869AD00272A14EE009203F7 /* GetGlobalBeforeYesterdayData.swift in Sources */,
 				282936FA270F9EF80038D812 /* StatVC.swift in Sources */,
 				2810E4E32728C409007E2115 /* GetDataForChart.swift in Sources */,
 				280EAB38271484D100FD0558 /* MainVCFunctional.swift in Sources */,
 				287F34C22720B8D600A9E426 /* SetTodayTotalData.swift in Sources */,
+				2869ACFC272A11DB009203F7 /* SetTodayGlobalTotalData.swift in Sources */,
 				28432923270B546F00F8698B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

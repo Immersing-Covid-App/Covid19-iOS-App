@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Charts
 
 var currentCountry: String = "USA"
 
@@ -16,6 +17,8 @@ var chartData: [Double] = [0, 0, 0, 0, 0, 0, 0]
 struct CovidData: Decodable {
     var response: [Response]?
 }
+
+
 struct Response: Decodable {
     var country: String?
     var cases: Cases?
@@ -31,7 +34,7 @@ struct Cases: Decodable {
 }
 struct Deaths: Decodable {
     var new: String?
-    var total: Int
+    var total: Int?
 }
 
 // структура для данных
@@ -45,5 +48,12 @@ struct CovidDataInCurrentTime: Codable {
     var date: Date
 }
 
-
+// создаем пустой массив для чарта
+var entry: [BarChartDataEntry] = [BarChartDataEntry(x: 1, y: 0),
+                                  BarChartDataEntry(x: 2, y: 0),
+                                  BarChartDataEntry(x: 3, y: 0),
+                                  BarChartDataEntry(x: 4, y: 0),
+                                  BarChartDataEntry(x: 5, y: 0),
+                                  BarChartDataEntry(x: 6, y: 0),
+                                  BarChartDataEntry(x: 7, y: 0)]
 

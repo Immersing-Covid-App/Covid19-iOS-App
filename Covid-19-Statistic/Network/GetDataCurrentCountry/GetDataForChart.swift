@@ -24,13 +24,6 @@ extension NetworkManager {
         let seconds = TimeInterval(timezone.secondsFromGMT(for: Date()))
         let currentDate = Date(timeInterval: seconds, since: Date())
 
-        if currentDate == Date() {
-            print(currentDate, Date())
-        } else {
-            print("a",currentDate, "b", Date())
-        }
-
-
         // получаем данные new текущей даты
         let currenURL = "https://\(apiHost)/statistics?country=\(country)"
 

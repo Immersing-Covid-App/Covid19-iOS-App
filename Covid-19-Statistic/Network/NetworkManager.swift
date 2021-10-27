@@ -16,5 +16,9 @@ class NetworkManager {
         self.getYesterdayDataForCurrentCountry(country: country)
         self.getBeforeYesterdayDataForCurrentCountry(country: country)
         self.getChartDataForCurrentCountry(country: country)
+        self.getTodayDataForGlobal(country: "All")
+        self.getYesterdayDataForGlobal(country: "All")
+        self.getBeforeYesterdayDataForGlobal(country: "All")
+        self.getChartDataForGlobal(country: "All")
     }
 }

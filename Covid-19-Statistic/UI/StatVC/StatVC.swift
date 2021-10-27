@@ -11,7 +11,7 @@ import Charts
 
 class StatVC: UIViewController {
     
-    private var isGlobal: Bool = true
+    private var isGlobal: Bool = false
     private var isToday: Bool = false
     private var isYesterday: Bool = false
     private var isTotal: Bool = true
@@ -335,7 +335,7 @@ class StatVC: UIViewController {
         return chartTitle
     }()
     
-    private lazy var barChart: BarChartView = {
+     lazy var barChart: BarChartView = {
         let barChart = BarChartView()
         barChart.legend.enabled = false
         barChart.doubleTapToZoomEnabled = false
@@ -474,7 +474,7 @@ extension StatVC {
         globalSwitchButton.width(160)
         
         currentSwitchView.centerYToSuperview()
-        if isGlobal {
+        if !isGlobal {
             currentSwitchView.leftToSuperview(offset: 4)
         } else {
             currentSwitchView.rightToSuperview(offset: -4)
@@ -580,7 +580,19 @@ extension StatVC {
         currentSwitchView.layer.position = myCountrySwitchButton.layer.position
         globalLabel.textColor = .white
         myCountryLabel.textColor = UIColor(named: "mainViewColor")
+
         isGlobal = false
+        isToday = false
+        isYesterday = false
+        isTotal = true
+
+        todayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
+        yesterdayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
+        totalButton.setTitleColor(.white, for: .normal)
+
+        setTodayTotalData()
+
+        setChartData()
     }
     
     @objc func globalTap() {
@@ -592,7 +604,18 @@ extension StatVC {
         currentSwitchView.layer.position = globalSwitchButton.layer.position
         globalLabel.textColor = UIColor(named: "mainViewColor")
         myCountryLabel.textColor = .white
+
+        setTodayGlobalTotalData()
+
         isGlobal = true
+        isToday = false
+        isYesterday = false
+        isTotal = true
+        todayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
+        yesterdayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
+        totalButton.setTitleColor(.white, for: .normal)
+
+        setGlobalChartData()
     }
 
     @objc func totalButtonTap() {
@@ -603,7 +626,11 @@ extension StatVC {
         yesterdayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         totalButton.setTitleColor(.white, for: .normal)
 
-        setTodayTotalData()
+        if isGlobal {
+            setTodayGlobalTotalData()
+        } else {
+            setTodayTotalData()
+        }
     }
     
     @objc func todayButtonTap() {
@@ -614,7 +641,11 @@ extension StatVC {
         yesterdayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         todayButton.setTitleColor(.white, for: .normal)
 
-        setTodayData()
+        if isGlobal {
+            setTodayGlobalData()
+        } else {
+            setTodayData()
+        }
     }
     
     @objc func yesterdayButtonTap() {
@@ -625,6 +656,10 @@ extension StatVC {
         todayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         yesterdayButton.setTitleColor(.white, for: .normal)
 
-        setYesterdayData()
+        if isGlobal {
+            setYesterdayGlobalData()
+        } else {
+            setYesterdayData()
+        }
     }
 }
