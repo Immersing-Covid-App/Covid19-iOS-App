@@ -12,6 +12,7 @@
 		2810E4DD2728A93C007E2115 /* GetYesterdayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810E4DC2728A93C007E2115 /* GetYesterdayData.swift */; };
 		2810E4DF2728AA64007E2115 /* SetYesterdayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810E4DE2728AA64007E2115 /* SetYesterdayData.swift */; };
 		2810E4E12728B7CE007E2115 /* GetBeforeYesterdayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810E4E02728B7CE007E2115 /* GetBeforeYesterdayData.swift */; };
+		2810E4E32728C409007E2115 /* GetDataForChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810E4E22728C409007E2115 /* GetDataForChart.swift */; };
 		282936F6270E64EF0038D812 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 282936F5270E64EF0038D812 /* Podfile */; };
 		282936F8270F90010038D812 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282936F7270F90010038D812 /* Support.swift */; };
 		282936FA270F9EF80038D812 /* StatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282936F9270F9EF80038D812 /* StatVC.swift */; };
@@ -43,6 +44,7 @@
 		2810E4DC2728A93C007E2115 /* GetYesterdayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetYesterdayData.swift; sourceTree = "<group>"; };
 		2810E4DE2728AA64007E2115 /* SetYesterdayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetYesterdayData.swift; sourceTree = "<group>"; };
 		2810E4E02728B7CE007E2115 /* GetBeforeYesterdayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBeforeYesterdayData.swift; sourceTree = "<group>"; };
+		2810E4E22728C409007E2115 /* GetDataForChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataForChart.swift; sourceTree = "<group>"; };
 		282936F5270E64EF0038D812 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		282936F7270F90010038D812 /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
 		282936F9270F9EF80038D812 /* StatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatVC.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				287F34CB2724BACA00A9E426 /* GetTodayData.swift */,
 				2810E4DC2728A93C007E2115 /* GetYesterdayData.swift */,
 				2810E4E02728B7CE007E2115 /* GetBeforeYesterdayData.swift */,
+				2810E4E22728C409007E2115 /* GetDataForChart.swift */,
 				287F34D527262A4700A9E426 /* ErrorData.swift */,
 				28AD02A9271CF58A0009B0F8 /* DataModel.swift */,
 			);
@@ -329,6 +332,7 @@
 				287F34D22724C40400A9E426 /* SetTodayData.swift in Sources */,
 				28432921270B546F00F8698B /* AppDelegate.swift in Sources */,
 				282936FA270F9EF80038D812 /* StatVC.swift in Sources */,
+				2810E4E32728C409007E2115 /* GetDataForChart.swift in Sources */,
 				280EAB38271484D100FD0558 /* MainVCFunctional.swift in Sources */,
 				287F34C22720B8D600A9E426 /* SetTodayTotalData.swift in Sources */,
 				28432923270B546F00F8698B /* SceneDelegate.swift in Sources */,

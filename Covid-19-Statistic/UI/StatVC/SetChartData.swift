@@ -10,34 +10,26 @@ import Charts
 
 extension StatVC {
 
-    func SetChartData() {
+    func setChartData() {
 
         // получаем данные из UserDefaults
-        if let data = UserDefaults.standard.data(forKey: "dataTotal") {
-            let dataTotal = try? JSONDecoder().decode(CovidDataInCurrentTime.self, from: data)
+        guard let _ = UserDefaults.standard.array(forKey: "chartData") else { return }
+        let chartsData = UserDefaults.standard.array(forKey: "chartData")  as? [Double] ?? [Double]()
 
-            let chartDataArray = getChartEntry()
-            print(chartDataArray)
+        // разворачиваем массив
+        let revertChartsData = chartsData.reduce([],{ [$1] + $0 })
 
-            entry = [BarChartDataEntry(x: 0, y: chartDataArray[0]),
-                     BarChartDataEntry(x: 0, y: chartDataArray[1]),
-                     BarChartDataEntry(x: 0, y: chartDataArray[2]),
-                     BarChartDataEntry(x: 0, y: chartDataArray[3]),
-                     BarChartDataEntry(x: 0, y: chartDataArray[4]),
-                     BarChartDataEntry(x: 0, y: chartDataArray[5]),
-                     BarChartDataEntry(x: 0, y: chartDataArray[6]),
-            ]
+        // помещаем данные в entry
+        entry = [BarChartDataEntry(x: 1, y: revertChartsData[0]),
+                 BarChartDataEntry(x: 2, y: revertChartsData[1]),
+                 BarChartDataEntry(x: 3, y: revertChartsData[2]),
+                 BarChartDataEntry(x: 4, y: revertChartsData[3]),
+                 BarChartDataEntry(x: 5, y: revertChartsData[4]),
+                 BarChartDataEntry(x: 6, y: revertChartsData[5]),
+                 BarChartDataEntry(x: 7, y: revertChartsData[6]),
+        ]
 
-            
-
-            let newData = dataTotal!.new
-            // удаляем данные из 7 позиции
-            entry.remove(at: 6)
-            // помещаем в 7 позицию данные текущего дня
-            entry.insert(BarChartDataEntry(x: 7, y: Double(newData)), at: 6)
-            // генерируем чарт
-            chartCreate(entry: entry)
-
-        }
+        // генерируем чарт
+        chartCreate(entry: entry)
     }
 }

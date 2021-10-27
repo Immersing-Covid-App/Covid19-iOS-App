@@ -15,10 +15,12 @@ class MainVC: UIViewController {
         viewSetup()
 
         // получаем и сохраняем все данные
-        DispatchQueue.global(qos: .background).async {
             let _ = NetworkManager(country: currentCountry, vc: self)
             self.errorData()
-        }
+            
+
+
+
 
 
     }

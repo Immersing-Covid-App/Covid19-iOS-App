@@ -26,25 +26,23 @@ var entry: [BarChartDataEntry] = [BarChartDataEntry(x: 1, y: 0),
 
 // создаем массив с данными для будущего чарта
 
-struct ChartsData: Codable {
-    var chartData: [Double]
-}
 
 
 
-// сохраняем массив с данными в память
-func createChartEntry() {
-    let chartData: [Double] = [0, 0, 0, 0, 0, 0, 0]
-//    let data = try? JSONEncoder().encode(chartData)
-    UserDefaults.standard.set(chartData, forKey: "entry")
-}
 
-//получаем данные для чарта из памяти
-func getChartEntry() -> [Double] {
-    // получаем данные из UserDefaults
-    let data = UserDefaults.standard.array(forKey: "entry") as! [Double]
-       return data
-}
+//// сохраняем массив с данными в память
+//func createChartEntry() {
+//    let chartData: [Double] = [0, 0, 0, 0, 0, 0, 0]
+////    let data = try? JSONEncoder().encode(chartData)
+//    UserDefaults.standard.set(chartData, forKey: "entry")
+//}
+
+////получаем данные для чарта из памяти
+//func getChartEntry() -> [Double] {
+//    // получаем данные из UserDefaults
+//    let data = UserDefaults.standard.array(forKey: "entry") as! [Double]
+//       return data
+//}
 
 
 
