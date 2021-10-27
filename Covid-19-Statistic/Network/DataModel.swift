@@ -10,7 +10,7 @@ import Foundation
 var currentCountry: String = "USA"
 
 // создаем массив для данных чарта
-var chartData: [Double] = [0,0,0,0,0,0,0]
+var chartData: [Double] = [0, 0, 0, 0, 0, 0, 0]
 
 // структуры для JSON Decode
 struct CovidData: Decodable {
@@ -44,10 +44,6 @@ struct CovidDataInCurrentTime: Codable {
     var death: Int
     var date: Date
 }
-
-//struct ChartsData: Codable {
-//    var chartData: [Double]
-//}
 
 
 

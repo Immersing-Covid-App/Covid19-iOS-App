@@ -91,8 +91,7 @@ extension NetworkManager {
 
                     //сохраняем в память
                     UserDefaults.standard.set(chartData, forKey: "chartData")
-                    
-                    print("данные chartData успешно обновлены")
+
                 } catch {
                     print(error.localizedDescription)
                 }

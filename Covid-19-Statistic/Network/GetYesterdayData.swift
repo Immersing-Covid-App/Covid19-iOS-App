@@ -63,7 +63,6 @@ extension NetworkManager {
                 //сохраняем в память
                 let data = try? JSONEncoder().encode(dataTotal)
                 UserDefaults.standard.set(data, forKey: "dataYesterday")
-                print("данные dataYesterday успешно обновлены")
             } catch {
                 print(error.localizedDescription)
             }

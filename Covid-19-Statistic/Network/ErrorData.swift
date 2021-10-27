@@ -16,7 +16,6 @@ extension MainVC {
     }
 
     @objc func errorGetData() {
-        print("данные не получены")
         let alertVC = UIAlertController(title: "Error", message: "No data received, check your internet connection", preferredStyle: .alert)
         let action = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertVC.addAction(action)

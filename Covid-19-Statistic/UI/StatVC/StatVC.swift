@@ -20,8 +20,6 @@ class StatVC: UIViewController {
         super.viewDidLoad()
         viewSetup()
         errorData()
-
-        print(100000)
         setChartData()
     }
 
@@ -368,7 +366,6 @@ class StatVC: UIViewController {
     }()
     
     func chartCreate(entry: [BarChartDataEntry]) {
-        print(chartData)
         let dataSet = BarChartDataSet(entries: entry)
         let data = BarChartData(dataSet: dataSet)
         data.barWidth = 0.2
