@@ -9,8 +9,10 @@ import Foundation
 import UIKit
 
 // Notification
+// Подписки под уведомления об ошибках и их методы
 
 extension MainVC {
+
     func errorData() {
         NotificationCenter.default.addObserver(self, selector: #selector(errorGetData), name: Notification.Name("errorGetData"), object: nil)
     }

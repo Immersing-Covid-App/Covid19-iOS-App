@@ -24,6 +24,12 @@ extension NetworkManager {
         let seconds = TimeInterval(timezone.secondsFromGMT(for: Date()))
         let currentDate = Date(timeInterval: seconds, since: Date())
 
+        if currentDate == Date() {
+            print(currentDate, Date())
+        } else {
+            print("a",currentDate, "b", Date())
+        }
+
 
         // получаем данные new текущей даты
         let currenURL = "https://\(apiHost)/statistics?country=\(country)"
@@ -44,11 +50,19 @@ extension NetworkManager {
                 let newData = gotDataNew.customizeNew()
 
                 // помещаем данные в массив
-                chartData.remove(at: 0)
-                chartData.insert(Double(newData), at: 0)
 
-                //сохраняем в память
-                UserDefaults.standard.set(chartData, forKey: "chartData")
+                // сравниваем дату
+                if currentDate == Date() {
+                    chartData.remove(at: 0)
+                    chartData.insert(Double(newData), at: 0)
+                    //сохраняем в память
+                    UserDefaults.standard.set(chartData, forKey: "chartData")
+                } else {
+                    chartData.remove(at: 0)
+                    chartData.insert(Double(0), at: 0)
+                    //сохраняем в память
+                    UserDefaults.standard.set(chartData, forKey: "chartData")
+                }
 
             } catch {
                 print(error.localizedDescription)
