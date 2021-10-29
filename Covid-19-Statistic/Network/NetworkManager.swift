@@ -19,20 +19,11 @@ class NetworkManager {
     ]
 
     init(country: String, vc: UIViewController) {
-//        self.getTodayDataForCurrentCountry(country: country)
-//        self.getYesterdayDataForCurrentCountry(country: country)
-//        self.getBeforeYesterdayDataForCurrentCountry(country: country)
-//        self.getChartDataForCurrentCountry(country: country)
-//        self.getTodayDataForGlobal(country: "All")
-//        self.getYesterdayDataForGlobal(country: "All")
-//        self.getBeforeYesterdayDataForGlobal(country: "All")
-//        self.getChartDataForGlobal(country: "All")
         self.getData(date: "")
 
-   /*     let dates = getDates()
-
+        let dates = getDates()
         for i in dates {
             self.getData(date: i)
-        } */
+        }
     }
 }
