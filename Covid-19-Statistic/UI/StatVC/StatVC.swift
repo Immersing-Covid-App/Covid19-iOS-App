@@ -219,7 +219,7 @@ class StatVC: UIViewController {
     
     lazy var affectedNumbers: UILabel = {
         let affectedNumbers = UILabel()
-        affectedNumbers.text = "336 998"
+        affectedNumbers.text = "0"
         affectedNumbers.font = UIFont(name: "Graphik-Semibold", size: 24)
         affectedNumbers.textColor = .white
         return affectedNumbers
@@ -235,7 +235,7 @@ class StatVC: UIViewController {
     
     lazy var deathNumbers: UILabel = {
         let deathNumbers = UILabel()
-        deathNumbers.text = "9 800"
+        deathNumbers.text = "0"
         deathNumbers.font = UIFont(name: "Graphik-Semibold", size: 24)
         deathNumbers.textColor = .white
         return deathNumbers
@@ -280,7 +280,7 @@ class StatVC: UIViewController {
     
     lazy var recoveredNumbers: UILabel = {
         let recoveredNumbers = UILabel()
-        recoveredNumbers.text = "Null"
+        recoveredNumbers.text = "0"
         recoveredNumbers.font = UIFont(name: "Graphik-Semibold", size: 12)
         recoveredNumbers.textColor = .white
         return recoveredNumbers
@@ -296,7 +296,7 @@ class StatVC: UIViewController {
     
     lazy var activeNumbers: UILabel = {
         let activeNumbers = UILabel()
-        activeNumbers.text = "9 800"
+        activeNumbers.text = "0"
         activeNumbers.font = UIFont(name: "Graphik-Semibold", size: 12)
         activeNumbers.textColor = .white
         return activeNumbers
@@ -312,7 +312,7 @@ class StatVC: UIViewController {
     
     lazy var seriousNumbers: UILabel = {
         let seriousNumbers = UILabel()
-        seriousNumbers.text = "9 800"
+        seriousNumbers.text = "0"
         seriousNumbers.font = UIFont(name: "Graphik-Semibold", size: 12)
         seriousNumbers.textColor = .white
         return seriousNumbers

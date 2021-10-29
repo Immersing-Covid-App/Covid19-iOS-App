@@ -12,19 +12,30 @@ extension StatVC {
 
     func setTodayTotalData() {
         // получаем данные из UserDefaults
-        if let data = UserDefaults.standard.data(forKey: "dataToday") {
-            let dataTotal = try? JSONDecoder().decode(CovidDataInCurrentTime.self, from: data)
+        let data = UserDefaults.standard.data(forKey: "covidData")
+        // декодируем
+        do {
+            let dataTotal = try JSONDecoder().decode([CovidDataInCurrentTime].self, from: data!)
 
-            // присваиваем данные
-            affectedNumbers.text = String(describing: dataTotal!.affected.formattedWithSeparator)
+            // проходим по массиву данных
+            for data in dataTotal {
 
-            deathNumbers.text = String(describing: dataTotal!.death.formattedWithSeparator)
+                // проверяем текущую страну
+                if data.country == currentCountry {
+                    // присваиваем данные
+                    affectedNumbers.text = String(describing: data.affected.formattedWithSeparator)
 
-            recoveredNumbers.text = String(describing: dataTotal!.recovered.formattedWithSeparator)
+                    deathNumbers.text = String(describing: data.death.formattedWithSeparator)
 
-            activeNumbers.text = String(describing: dataTotal!.active.formattedWithSeparator)
+                    recoveredNumbers.text = String(describing: data.recovered.formattedWithSeparator)
 
-            seriousNumbers.text = String(describing: dataTotal!.critical.formattedWithSeparator)
+                    activeNumbers.text = String(describing: data.active.formattedWithSeparator)
+
+                    seriousNumbers.text = String(describing: data.critical.formattedWithSeparator)
+                }
+            }
+        } catch {
+            print(error)
         }
     }
 }

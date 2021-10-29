@@ -15,7 +15,7 @@ class MainVC: UIViewController {
         viewSetup()
 
         // получаем и сохраняем все данные
-            let _ = NetworkManager(country: currentCountry, vc: self)
+//            let _ = NetworkManager(country: currentCountry, vc: self)
             self.errorData()
             
 
@@ -27,6 +27,7 @@ class MainVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         UITabBar.appearance().barTintColor = .white
+        let _ = NetworkManager(country: currentCountry, vc: self)
     }
 
     // MARK: - UI elements

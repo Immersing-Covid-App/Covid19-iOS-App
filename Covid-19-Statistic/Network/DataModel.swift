@@ -14,25 +14,24 @@ var currentCountry: String = "USA"
 var chartData: [Double] = [0, 0, 0, 0, 0, 0, 0]
 
 // структуры для JSON Decode
-struct CovidData: Decodable {
+struct CovidData: Codable {
     var response: [Response]?
 }
 
-
-struct Response: Decodable {
+struct Response: Codable {
     var country: String?
     var cases: Cases?
     var deaths: Deaths?
     var time: String?
 }
-struct Cases: Decodable {
+struct Cases: Codable {
     var new: String?
     var active: Int?
     var critical: Int?
     var recovered: Int?
     var total: Int?
 }
-struct Deaths: Decodable {
+struct Deaths: Codable {
     var new: String?
     var total: Int?
 }
@@ -45,7 +44,7 @@ struct CovidDataInCurrentTime: Codable {
     var recovered:Int
     var affected: Int
     var death: Int
-    var date: Date
+    var country: String
 }
 
 // создаем пустой массив для чарта
@@ -56,4 +55,3 @@ var entry: [BarChartDataEntry] = [BarChartDataEntry(x: 1, y: 0),
                                   BarChartDataEntry(x: 5, y: 0),
                                   BarChartDataEntry(x: 6, y: 0),
                                   BarChartDataEntry(x: 7, y: 0)]
-
