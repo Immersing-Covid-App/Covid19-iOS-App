@@ -6,53 +6,75 @@
 //
 
 import Foundation
-import Charts
 
 extension StatVC {
 
     func setYesterdayData() {
-        // получаем данные из UserDefaults
-        guard let yesterdayData = UserDefaults.standard.data(forKey: "dataYesterday") else { return }
-        guard let beforeYesterdayData = UserDefaults.standard.data(forKey: "dataBeforeYesterday") else { return }
 
-        // декодируем полученные данные
-        guard let yesterdayDataForSet = try? JSONDecoder().decode(CovidDataInCurrentTime.self, from: yesterdayData) else { return }
+        // получаем вчерашнюю и позавчерашнюю даты в формате yyyy-mm-dd
+        // форматер для дат
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(abbreviation: "UTC")
+        formatter.dateFormat = "yyyy-MM-dd"
+        var calendar = Calendar.current
+        calendar.timeZone = .current
 
-        guard let beforeYesterdayDataForSet = try? JSONDecoder().decode(CovidDataInCurrentTime.self, from: beforeYesterdayData) else { return }
+        // текущая дата
+        let timezone = TimeZone.current
+        let seconds = TimeInterval(timezone.secondsFromGMT(for: Date()))
+        let currentDate = Date(timeInterval: seconds, since: Date())
+
+        // вчерашняя дата
+        guard let yesterday = calendar.date(byAdding: .day, value: -1, to: currentDate) else {
+            print("не удалось получить вчерашнюю дату")
+            return }
+
+        // позавчерашняя дата
+        guard let beforeYesterday = calendar.date(byAdding: .day, value: -2, to: currentDate) else {
+            print("не удалось получить вчерашнюю дату")
+            return }
+
+        // форматируем даты
+        let yesterdayDate = formatter.string(from: yesterday)
+        let beforeYesterdayDate = formatter.string(from: beforeYesterday)
+
+        // получаем данные из UserDefaults за сегодня и вчера
+        let dataYesterday = setTodayTotalData(date: yesterdayDate)
+        let dataBeforeYesterday = setTodayTotalData(date: beforeYesterdayDate)
 
         // присваиваем данные в блок Affected
-        if (yesterdayDataForSet.affected - beforeYesterdayDataForSet.affected) < 0 {
-            affectedNumbers.text = "- " + String(describing: ((yesterdayDataForSet.affected - beforeYesterdayDataForSet.affected) * -1 ).formattedWithSeparator)
+        if (dataYesterday.affected - dataBeforeYesterday.affected) > 0 {
+            affectedNumbers.text = "+ " + String(describing: (dataYesterday.affected - dataBeforeYesterday.affected).formattedWithSeparator)
         } else {
-            affectedNumbers.text = "+ " + String(describing: (yesterdayDataForSet.affected - beforeYesterdayDataForSet.affected).formattedWithSeparator)
+            affectedNumbers.text = "- " + String(describing: ((dataYesterday.affected - dataBeforeYesterday.affected) * -1).formattedWithSeparator)
         }
 
         // присваиваем данные в блок Death
-        if (yesterdayDataForSet.death - beforeYesterdayDataForSet.death) < 0 {
-            deathNumbers.text = "- " + String(describing: ((yesterdayDataForSet.death - beforeYesterdayDataForSet.death) * -1 ).formattedWithSeparator)
+        if (dataYesterday.death - dataBeforeYesterday.death) > 0 {
+            deathNumbers.text = "+ " + String(describing: (dataYesterday.death - dataBeforeYesterday.death).formattedWithSeparator)
         } else {
-            deathNumbers.text = "+ " + String(describing: (yesterdayDataForSet.death - beforeYesterdayDataForSet.death).formattedWithSeparator)
+            deathNumbers.text = "- " + String(describing: ((dataYesterday.death - dataBeforeYesterday.death) * -1).formattedWithSeparator)
         }
 
         // присваиваем данные в блок Recovered
-        if (yesterdayDataForSet.recovered - beforeYesterdayDataForSet.recovered) < 0 {
-            recoveredNumbers.text = "- " + String(describing: ((yesterdayDataForSet.recovered - beforeYesterdayDataForSet.recovered) * -1 ).formattedWithSeparator)
+        if (dataYesterday.recovered - dataBeforeYesterday.recovered) > 0 {
+            recoveredNumbers.text = "+ " + String(describing: (dataYesterday.recovered - dataBeforeYesterday.recovered).formattedWithSeparator)
         } else {
-            recoveredNumbers.text = "+ " + String(describing: (yesterdayDataForSet.recovered - beforeYesterdayDataForSet.recovered).formattedWithSeparator)
+            recoveredNumbers.text = "- " + String(describing: ((dataYesterday.recovered - dataBeforeYesterday.recovered) * -1).formattedWithSeparator)
         }
 
         // присваиваем данные в блок Active
-        if (yesterdayDataForSet.active - beforeYesterdayDataForSet.active) < 0 {
-            activeNumbers.text = "- " + String(describing: ((yesterdayDataForSet.active - beforeYesterdayDataForSet.active) * -1 ).formattedWithSeparator)
+        if (dataYesterday.active - dataBeforeYesterday.active) > 0 {
+            activeNumbers.text = "+ " + String(describing: (dataYesterday.active - dataBeforeYesterday.active).formattedWithSeparator)
         } else {
-            activeNumbers.text = "+ " + String(describing: (yesterdayDataForSet.active - beforeYesterdayDataForSet.active).formattedWithSeparator)
+            activeNumbers.text = "- " + String(describing: ((dataYesterday.active - dataBeforeYesterday.active) * -1).formattedWithSeparator)
         }
 
         // присваиваем данные в блок Serious
-        if (yesterdayDataForSet.critical - beforeYesterdayDataForSet.critical) < 0 {
-            seriousNumbers.text = "- " + String(describing: ((yesterdayDataForSet.critical - beforeYesterdayDataForSet.critical) * -1 ).formattedWithSeparator)
+        if (dataYesterday.critical - dataBeforeYesterday.critical) > 0 {
+            seriousNumbers.text = "+ " + String(describing: (dataYesterday.critical - dataBeforeYesterday.critical).formattedWithSeparator)
         } else {
-            seriousNumbers.text = "+ " + String(describing: (yesterdayDataForSet.critical - beforeYesterdayDataForSet.critical).formattedWithSeparator)
+            seriousNumbers.text = "- " + String(describing: ((dataYesterday.critical - dataBeforeYesterday.critical) * -1).formattedWithSeparator)
         }
     }
 }

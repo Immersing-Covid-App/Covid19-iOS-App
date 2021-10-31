@@ -14,6 +14,7 @@
 		2810E4E32728C409007E2115 /* GetDataForChart_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810E4E22728C409007E2115 /* GetDataForChart_.swift */; };
 		2811334C272C31770020FC35 /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2811334B272C31770020FC35 /* GetData.swift */; };
 		2811334E272C7C520020FC35 /* GetDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2811334D272C7C520020FC35 /* GetDates.swift */; };
+		28113350272DFFB70020FC35 /* GetCountries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2811334F272DFFB60020FC35 /* GetCountries.swift */; };
 		282936F6270E64EF0038D812 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 282936F5270E64EF0038D812 /* Podfile */; };
 		282936F8270F90010038D812 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282936F7270F90010038D812 /* Support.swift */; };
 		282936FA270F9EF80038D812 /* StatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282936F9270F9EF80038D812 /* StatVC.swift */; };
@@ -55,6 +56,7 @@
 		2810E4E22728C409007E2115 /* GetDataForChart_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDataForChart_.swift; sourceTree = "<group>"; };
 		2811334B272C31770020FC35 /* GetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
 		2811334D272C7C520020FC35 /* GetDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDates.swift; sourceTree = "<group>"; };
+		2811334F272DFFB60020FC35 /* GetCountries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountries.swift; sourceTree = "<group>"; };
 		282936F5270E64EF0038D812 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		282936F7270F90010038D812 /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
 		282936F9270F9EF80038D812 /* StatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatVC.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				28AD02A7271CEE780009B0F8 /* NetworkManager.swift */,
 				2811334B272C31770020FC35 /* GetData.swift */,
 				2811334D272C7C520020FC35 /* GetDates.swift */,
+				2811334F272DFFB60020FC35 /* GetCountries.swift */,
 				2869ACFA272A10E8009203F7 /* GetDataGlobal_ */,
 				2869ACF6272A00AF009203F7 /* GetDataCurrentCountry_ */,
 				287F34D527262A4700A9E426 /* ErrorData.swift */,
@@ -393,6 +396,7 @@
 				287F34CA272377FB00A9E426 /* BarCornerManual.swift in Sources */,
 				28AD02AA271CF58A0009B0F8 /* DataModel.swift in Sources */,
 				287F34D22724C40400A9E426 /* SetTodayData.swift in Sources */,
+				28113350272DFFB70020FC35 /* GetCountries.swift in Sources */,
 				2811334C272C31770020FC35 /* GetData.swift in Sources */,
 				2869ACFE272A1480009203F7 /* GetGlobalYesterdayData_.swift in Sources */,
 				28432921270B546F00F8698B /* AppDelegate.swift in Sources */,

@@ -17,12 +17,6 @@ class MainVC: UIViewController {
         // получаем и сохраняем все данные
 //            let _ = NetworkManager(country: currentCountry, vc: self)
             self.errorData()
-            
-
-
-
-
-
     }
 
     override func viewWillAppear(_ animated: Bool) {

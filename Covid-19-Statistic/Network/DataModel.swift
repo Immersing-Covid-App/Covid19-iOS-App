@@ -47,6 +47,11 @@ struct CovidDataInCurrentTime: Codable {
     var country: String
 }
 
+// структура для стран
+struct CountriesData: Codable {
+    var response: [String]?
+}
+
 // создаем пустой массив для чарта
 var entry: [BarChartDataEntry] = [BarChartDataEntry(x: 1, y: 0),
                                   BarChartDataEntry(x: 2, y: 0),

@@ -7,9 +7,6 @@
 
 import Foundation
 import Alamofire
-import UIKit
-
-
 
 class NetworkManager {
 
@@ -19,7 +16,11 @@ class NetworkManager {
     ]
 
     init(country: String, vc: UIViewController) {
+
+        self.getCountries()
+
         self.getData(date: "")
+
 
         let dates = getDates()
         for i in dates {
