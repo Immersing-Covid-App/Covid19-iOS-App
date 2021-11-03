@@ -9,7 +9,7 @@ import UIKit
 import TinyConstraints
 import Charts
 
-class StatVC: UIViewController {
+final class StatVC: UIViewController {
     
     private var isGlobal: Bool = false
     private var isToday: Bool = false
@@ -21,6 +21,8 @@ class StatVC: UIViewController {
         viewSetup()
         errorData()
         setChartData()
+
+    
     }
 
     
@@ -39,11 +41,12 @@ class StatVC: UIViewController {
             isToday = false
             isYesterday = false
             isTotal = true
+
             todayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
             yesterdayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
             totalButton.setTitleColor(.white, for: .normal)
 
-            setTodayTotalData()
+            setTotalData(isGlobal: isGlobal)
 
         }
         
@@ -590,7 +593,7 @@ extension StatVC {
         yesterdayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         totalButton.setTitleColor(.white, for: .normal)
 
-        setTodayTotalData()
+        setTotalData(isGlobal: isGlobal)
 
         setChartData()
     }
@@ -605,8 +608,6 @@ extension StatVC {
         globalLabel.textColor = UIColor(named: "mainViewColor")
         myCountryLabel.textColor = .white
 
-        setTodayGlobalTotalData()
-
         isGlobal = true
         isToday = false
         isYesterday = false
@@ -615,7 +616,9 @@ extension StatVC {
         yesterdayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         totalButton.setTitleColor(.white, for: .normal)
 
-        setGlobalChartData()
+        setTotalData(isGlobal: isGlobal)
+
+        //setGlobalChartData()
     }
 
     @objc func totalButtonTap() {
@@ -626,10 +629,10 @@ extension StatVC {
         yesterdayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         totalButton.setTitleColor(.white, for: .normal)
 
-        if isGlobal {
-            setTodayGlobalTotalData()
+        if !isGlobal {
+            setTotalData(isGlobal: isGlobal)
         } else {
-            setTodayTotalData()
+            setTotalData(isGlobal: isGlobal)
         }
     }
     
@@ -642,9 +645,9 @@ extension StatVC {
         todayButton.setTitleColor(.white, for: .normal)
 
         if isGlobal {
-            setTodayGlobalData()
+            setTodayData(isGlobal: isGlobal)
         } else {
-            setTodayData()
+            setTodayData(isGlobal: isGlobal)
         }
     }
     
@@ -657,9 +660,9 @@ extension StatVC {
         yesterdayButton.setTitleColor(.white, for: .normal)
 
         if isGlobal {
-            setYesterdayGlobalData()
+            //setYesterdayGlobalData()
         } else {
-            setYesterdayData()
+//            setYesterdayData()
         }
     }
 }

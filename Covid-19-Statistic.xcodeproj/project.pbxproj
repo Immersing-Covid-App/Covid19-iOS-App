@@ -15,6 +15,7 @@
 		2811334C272C31770020FC35 /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2811334B272C31770020FC35 /* GetData.swift */; };
 		2811334E272C7C520020FC35 /* GetDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2811334D272C7C520020FC35 /* GetDates.swift */; };
 		28113350272DFFB70020FC35 /* GetCountries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2811334F272DFFB60020FC35 /* GetCountries.swift */; };
+		28113354272F64CD0020FC35 /* GetHistoryAllData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28113353272F64CD0020FC35 /* GetHistoryAllData.swift */; };
 		282936F6270E64EF0038D812 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 282936F5270E64EF0038D812 /* Podfile */; };
 		282936F8270F90010038D812 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282936F7270F90010038D812 /* Support.swift */; };
 		282936FA270F9EF80038D812 /* StatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282936F9270F9EF80038D812 /* StatVC.swift */; };
@@ -26,14 +27,14 @@
 		28432925270B546F00F8698B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28432924270B546F00F8698B /* MainVC.swift */; };
 		2843292D270B547900F8698B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2843292B270B547900F8698B /* LaunchScreen.storyboard */; };
 		2869ACF8272A00ED009203F7 /* GetGlobalTodayData_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869ACF7272A00ED009203F7 /* GetGlobalTodayData_.swift */; };
-		2869ACFC272A11DB009203F7 /* SetTodayGlobalTotalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869ACFB272A11DB009203F7 /* SetTodayGlobalTotalData.swift */; };
+		2869ACFC272A11DB009203F7 /* SetTodayGlobalTotalData_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869ACFB272A11DB009203F7 /* SetTodayGlobalTotalData_.swift */; };
 		2869ACFE272A1480009203F7 /* GetGlobalYesterdayData_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869ACFD272A1480009203F7 /* GetGlobalYesterdayData_.swift */; };
 		2869AD00272A14EE009203F7 /* GetGlobalBeforeYesterdayData_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869ACFF272A14EE009203F7 /* GetGlobalBeforeYesterdayData_.swift */; };
 		2869AD02272A1561009203F7 /* GetGlobalDataForChart_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869AD01272A1561009203F7 /* GetGlobalDataForChart_.swift */; };
-		2869AD05272A1654009203F7 /* SetTodayGlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869AD04272A1654009203F7 /* SetTodayGlobalData.swift */; };
-		2869AD07272A1772009203F7 /* SetYesterdayGlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869AD06272A1772009203F7 /* SetYesterdayGlobalData.swift */; };
-		2869AD09272A1815009203F7 /* SetGlobalChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869AD08272A1815009203F7 /* SetGlobalChartData.swift */; };
-		287F34C22720B8D600A9E426 /* SetTodayTotalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F34C12720B8D600A9E426 /* SetTodayTotalData.swift */; };
+		2869AD05272A1654009203F7 /* SetTodayGlobalData_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869AD04272A1654009203F7 /* SetTodayGlobalData_.swift */; };
+		2869AD07272A1772009203F7 /* SetYesterdayGlobalData_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869AD06272A1772009203F7 /* SetYesterdayGlobalData_.swift */; };
+		2869AD09272A1815009203F7 /* SetGlobalChartData_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2869AD08272A1815009203F7 /* SetGlobalChartData_.swift */; };
+		287F34C22720B8D600A9E426 /* SetTotalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F34C12720B8D600A9E426 /* SetTotalData.swift */; };
 		287F34C42720C22B00A9E426 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28432929270B547900F8698B /* Assets.xcassets */; };
 		287F34C62722306800A9E426 /* SetChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F34C52722306800A9E426 /* SetChartData.swift */; };
 		287F34CA272377FB00A9E426 /* BarCornerManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F34C9272377FB00A9E426 /* BarCornerManual.swift */; };
@@ -57,6 +58,7 @@
 		2811334B272C31770020FC35 /* GetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
 		2811334D272C7C520020FC35 /* GetDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDates.swift; sourceTree = "<group>"; };
 		2811334F272DFFB60020FC35 /* GetCountries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountries.swift; sourceTree = "<group>"; };
+		28113353272F64CD0020FC35 /* GetHistoryAllData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHistoryAllData.swift; sourceTree = "<group>"; };
 		282936F5270E64EF0038D812 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		282936F7270F90010038D812 /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
 		282936F9270F9EF80038D812 /* StatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatVC.swift; sourceTree = "<group>"; };
@@ -71,14 +73,14 @@
 		2843292C270B547900F8698B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2843292E270B547900F8698B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2869ACF7272A00ED009203F7 /* GetGlobalTodayData_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGlobalTodayData_.swift; sourceTree = "<group>"; };
-		2869ACFB272A11DB009203F7 /* SetTodayGlobalTotalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTodayGlobalTotalData.swift; sourceTree = "<group>"; };
+		2869ACFB272A11DB009203F7 /* SetTodayGlobalTotalData_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTodayGlobalTotalData_.swift; sourceTree = "<group>"; };
 		2869ACFD272A1480009203F7 /* GetGlobalYesterdayData_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGlobalYesterdayData_.swift; sourceTree = "<group>"; };
 		2869ACFF272A14EE009203F7 /* GetGlobalBeforeYesterdayData_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGlobalBeforeYesterdayData_.swift; sourceTree = "<group>"; };
 		2869AD01272A1561009203F7 /* GetGlobalDataForChart_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGlobalDataForChart_.swift; sourceTree = "<group>"; };
-		2869AD04272A1654009203F7 /* SetTodayGlobalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTodayGlobalData.swift; sourceTree = "<group>"; };
-		2869AD06272A1772009203F7 /* SetYesterdayGlobalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetYesterdayGlobalData.swift; sourceTree = "<group>"; };
-		2869AD08272A1815009203F7 /* SetGlobalChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGlobalChartData.swift; sourceTree = "<group>"; };
-		287F34C12720B8D600A9E426 /* SetTodayTotalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTodayTotalData.swift; sourceTree = "<group>"; };
+		2869AD04272A1654009203F7 /* SetTodayGlobalData_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTodayGlobalData_.swift; sourceTree = "<group>"; };
+		2869AD06272A1772009203F7 /* SetYesterdayGlobalData_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetYesterdayGlobalData_.swift; sourceTree = "<group>"; };
+		2869AD08272A1815009203F7 /* SetGlobalChartData_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGlobalChartData_.swift; sourceTree = "<group>"; };
+		287F34C12720B8D600A9E426 /* SetTotalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTotalData.swift; sourceTree = "<group>"; };
 		287F34C52722306800A9E426 /* SetChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetChartData.swift; sourceTree = "<group>"; };
 		287F34C9272377FB00A9E426 /* BarCornerManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCornerManual.swift; sourceTree = "<group>"; };
 		287F34CB2724BACA00A9E426 /* GetTodayData_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTodayData_.swift; sourceTree = "<group>"; };
@@ -117,8 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				282936F9270F9EF80038D812 /* StatVC.swift */,
-				2869AD03272A160D009203F7 /* SetDataGlobal */,
-				2869ACF9272A10B5009203F7 /* SetDataCurrentCountry */,
+				2869AD03272A160D009203F7 /* SetDataGlobal_ */,
+				2869ACF9272A10B5009203F7 /* SetData */,
 				28AD0299271B9BB90009B0F8 /* CustomAxis.swift */,
 				287F34C9272377FB00A9E426 /* BarCornerManual.swift */,
 			);
@@ -181,15 +183,15 @@
 			path = GetDataCurrentCountry_;
 			sourceTree = "<group>";
 		};
-		2869ACF9272A10B5009203F7 /* SetDataCurrentCountry */ = {
+		2869ACF9272A10B5009203F7 /* SetData */ = {
 			isa = PBXGroup;
 			children = (
-				287F34C12720B8D600A9E426 /* SetTodayTotalData.swift */,
+				287F34C12720B8D600A9E426 /* SetTotalData.swift */,
 				287F34D12724C40400A9E426 /* SetTodayData.swift */,
 				2810E4DE2728AA64007E2115 /* SetYesterdayData.swift */,
 				287F34C52722306800A9E426 /* SetChartData.swift */,
 			);
-			path = SetDataCurrentCountry;
+			path = SetData;
 			sourceTree = "<group>";
 		};
 		2869ACFA272A10E8009203F7 /* GetDataGlobal_ */ = {
@@ -203,15 +205,15 @@
 			path = GetDataGlobal_;
 			sourceTree = "<group>";
 		};
-		2869AD03272A160D009203F7 /* SetDataGlobal */ = {
+		2869AD03272A160D009203F7 /* SetDataGlobal_ */ = {
 			isa = PBXGroup;
 			children = (
-				2869ACFB272A11DB009203F7 /* SetTodayGlobalTotalData.swift */,
-				2869AD04272A1654009203F7 /* SetTodayGlobalData.swift */,
-				2869AD06272A1772009203F7 /* SetYesterdayGlobalData.swift */,
-				2869AD08272A1815009203F7 /* SetGlobalChartData.swift */,
+				2869ACFB272A11DB009203F7 /* SetTodayGlobalTotalData_.swift */,
+				2869AD04272A1654009203F7 /* SetTodayGlobalData_.swift */,
+				2869AD06272A1772009203F7 /* SetYesterdayGlobalData_.swift */,
+				2869AD08272A1815009203F7 /* SetGlobalChartData_.swift */,
 			);
-			path = SetDataGlobal;
+			path = SetDataGlobal_;
 			sourceTree = "<group>";
 		};
 		287F34C0271F8C0C00A9E426 /* Network */ = {
@@ -220,6 +222,7 @@
 				287F34CD2724BC1B00A9E426 /* API.swift */,
 				28AD02A7271CEE780009B0F8 /* NetworkManager.swift */,
 				2811334B272C31770020FC35 /* GetData.swift */,
+				28113353272F64CD0020FC35 /* GetHistoryAllData.swift */,
 				2811334D272C7C520020FC35 /* GetDates.swift */,
 				2811334F272DFFB60020FC35 /* GetCountries.swift */,
 				2869ACFA272A10E8009203F7 /* GetDataGlobal_ */,
@@ -385,14 +388,14 @@
 				2869ACF8272A00ED009203F7 /* GetGlobalTodayData_.swift in Sources */,
 				282936F8270F90010038D812 /* Support.swift in Sources */,
 				287F34CC2724BACA00A9E426 /* GetTodayData_.swift in Sources */,
-				2869AD07272A1772009203F7 /* SetYesterdayGlobalData.swift in Sources */,
+				2869AD07272A1772009203F7 /* SetYesterdayGlobalData_.swift in Sources */,
 				287F34CE2724BC1B00A9E426 /* API.swift in Sources */,
 				2810E4DD2728A93C007E2115 /* GetYesterdayData_.swift in Sources */,
 				287F34D627262A4700A9E426 /* ErrorData.swift in Sources */,
 				28AD029A271B9BB90009B0F8 /* CustomAxis.swift in Sources */,
 				287F34C62722306800A9E426 /* SetChartData.swift in Sources */,
 				2869AD02272A1561009203F7 /* GetGlobalDataForChart_.swift in Sources */,
-				2869AD05272A1654009203F7 /* SetTodayGlobalData.swift in Sources */,
+				2869AD05272A1654009203F7 /* SetTodayGlobalData_.swift in Sources */,
 				287F34CA272377FB00A9E426 /* BarCornerManual.swift in Sources */,
 				28AD02AA271CF58A0009B0F8 /* DataModel.swift in Sources */,
 				287F34D22724C40400A9E426 /* SetTodayData.swift in Sources */,
@@ -400,13 +403,14 @@
 				2811334C272C31770020FC35 /* GetData.swift in Sources */,
 				2869ACFE272A1480009203F7 /* GetGlobalYesterdayData_.swift in Sources */,
 				28432921270B546F00F8698B /* AppDelegate.swift in Sources */,
-				2869AD09272A1815009203F7 /* SetGlobalChartData.swift in Sources */,
+				28113354272F64CD0020FC35 /* GetHistoryAllData.swift in Sources */,
+				2869AD09272A1815009203F7 /* SetGlobalChartData_.swift in Sources */,
 				2869AD00272A14EE009203F7 /* GetGlobalBeforeYesterdayData_.swift in Sources */,
 				282936FA270F9EF80038D812 /* StatVC.swift in Sources */,
 				2810E4E32728C409007E2115 /* GetDataForChart_.swift in Sources */,
 				280EAB38271484D100FD0558 /* MainVCFunctional.swift in Sources */,
-				287F34C22720B8D600A9E426 /* SetTodayTotalData.swift in Sources */,
-				2869ACFC272A11DB009203F7 /* SetTodayGlobalTotalData.swift in Sources */,
+				287F34C22720B8D600A9E426 /* SetTotalData.swift in Sources */,
+				2869ACFC272A11DB009203F7 /* SetTodayGlobalTotalData_.swift in Sources */,
 				28432923270B546F00F8698B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

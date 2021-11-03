@@ -8,7 +8,7 @@
 import UIKit
 import TinyConstraints
 
-class MainVC: UIViewController {
+final class MainVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

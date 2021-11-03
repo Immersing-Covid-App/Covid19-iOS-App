@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class NetworkManager {
+final class NetworkManager {
 
     let headers = [
         "x-rapidapi-host": apiHost,
@@ -26,5 +26,11 @@ class NetworkManager {
         for i in dates {
             self.getData(date: i)
         }
+
+        for i in dates {
+            self.getHistoryAllData(date: i)
+        }
+
+       
     }
 }

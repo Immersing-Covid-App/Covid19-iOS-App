@@ -42,6 +42,9 @@ extension NetworkManager {
                 // сохраняем страны в UserDefaults
                 UserDefaults.standard.set(countriesArray, forKey: "countries")
                 print("Страны получены и сохранены по ключу countries")
+
+                UserDefaults.standard.synchronize()
+                
             } catch {
                 print(error)
             }
