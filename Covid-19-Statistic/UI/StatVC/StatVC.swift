@@ -20,9 +20,7 @@ final class StatVC: UIViewController {
         super.viewDidLoad()
         viewSetup()
         errorData()
-        setChartData()
-
-    
+//        setChartData(isGlobal: isGlobal)
     }
 
     
@@ -49,7 +47,6 @@ final class StatVC: UIViewController {
             setTotalData(isGlobal: isGlobal)
 
         }
-        
     }
     
 
@@ -595,7 +592,7 @@ extension StatVC {
 
         setTotalData(isGlobal: isGlobal)
 
-        setChartData()
+        setChartData(isGlobal: isGlobal)
     }
     
     @objc func globalTap() {
@@ -618,7 +615,7 @@ extension StatVC {
 
         setTotalData(isGlobal: isGlobal)
 
-        //setGlobalChartData()
+        setChartData(isGlobal: isGlobal)
     }
 
     @objc func totalButtonTap() {
@@ -628,12 +625,14 @@ extension StatVC {
         todayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         yesterdayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         totalButton.setTitleColor(.white, for: .normal)
+        
+        setTotalData(isGlobal: isGlobal)
 
-        if !isGlobal {
-            setTotalData(isGlobal: isGlobal)
-        } else {
-            setTotalData(isGlobal: isGlobal)
-        }
+//        if !isGlobal {
+//            setTotalData(isGlobal: isGlobal)
+//        } else {
+//            setTotalData(isGlobal: isGlobal)
+//        }
     }
     
     @objc func todayButtonTap() {
@@ -643,13 +642,16 @@ extension StatVC {
         totalButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         yesterdayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         todayButton.setTitleColor(.white, for: .normal)
+        
+        setTodayData(isGlobal: isGlobal)
 
-        if isGlobal {
-            setTodayData(isGlobal: isGlobal)
-        } else {
-            setTodayData(isGlobal: isGlobal)
-        }
+//        if isGlobal {
+//            setTodayData(isGlobal: isGlobal)
+//        } else {
+//            setTodayData(isGlobal: isGlobal)
+//        }
     }
+    
     
     @objc func yesterdayButtonTap() {
         isToday = false
@@ -658,11 +660,14 @@ extension StatVC {
         totalButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         todayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         yesterdayButton.setTitleColor(.white, for: .normal)
+        
+        setYesterdayData(isGlobal: isGlobal)
 
-        if isGlobal {
-            //setYesterdayGlobalData()
-        } else {
-//            setYesterdayData()
-        }
+//        if isGlobal {
+//            //setYesterdayGlobalData()
+//        } else {
+////            setYesterdayData()
+//        }
     }
+    
 }

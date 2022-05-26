@@ -16,6 +16,10 @@ extension MainVC {
     func errorData() {
         NotificationCenter.default.addObserver(self, selector: #selector(errorGetData), name: Notification.Name("errorGetData"), object: nil)
     }
+    
+    func postError() {
+        NotificationCenter.default.post(name: Notification.Name("errorGetData"), object: nil)
+    }
 
     @objc func errorGetData() {
         let alertVC = UIAlertController(title: "Error", message: "No data received, check your internet connection", preferredStyle: .alert)
@@ -23,12 +27,15 @@ extension MainVC {
         alertVC.addAction(action)
         self.present(alertVC, animated: true, completion: nil)
     }
-
 }
 
 extension StatVC {
     func errorData() {
         NotificationCenter.default.addObserver(self, selector: #selector(noDataForToday), name: Notification.Name("noDataForToday"), object: nil)
+    }
+    
+    func postError() {
+        NotificationCenter.default.post(name: Notification.Name("noDataForToday"), object: nil)
     }
 
     @objc func noDataForToday() {
@@ -37,5 +44,4 @@ extension StatVC {
         alertVC.addAction(alertAction)
         self.present(alertVC, animated: true, completion: nil)
     }
-
 }

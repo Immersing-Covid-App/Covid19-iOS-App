@@ -1,26 +1,22 @@
 PODS:
-  - Alamofire (5.4.3)
   - Charts (3.6.0):
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
   - TinyConstraints (4.0.2)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.4)
   - Charts
   - TinyConstraints
 
 SPEC REPOS:
   trunk:
-    - Alamofire
     - Charts
     - TinyConstraints
 
 SPEC CHECKSUMS:
-  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   TinyConstraints: 7b7ccc0c485bb3bb47082138ff28bc33cd49897f
 
-PODFILE CHECKSUM: 1a2d6d9e46bd9e1b84d0e7af9b4a68a75b36bc34
+PODFILE CHECKSUM: c98163e0e798a058a46b74868b34d91e992a6839
 
 COCOAPODS: 1.11.2

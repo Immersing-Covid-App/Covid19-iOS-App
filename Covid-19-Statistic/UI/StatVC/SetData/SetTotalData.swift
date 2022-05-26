@@ -7,63 +7,56 @@
 
 import Foundation
 
+
 extension StatVC {
-
+    
     func setTotalData(isGlobal: Bool) {
-
-        // получаем данные из UserDefaults
-        let data =  UserDefaults.standard.data(forKey: "covidData")
-
-        // декодируем
-        do {
-            let dataTotal = try JSONDecoder().decode([CovidDataInCurrentTime].self, from: data!)
-
-            // проходим по массиву данных
-            for data in dataTotal {
-
-                if !isGlobal {
-
-                    // проверяем текущую страну
-                    if data.country == currentCountry {
-                        // присваиваем данные в блок Affected
-                        affectedNumbers.text = String(describing: data.affected.formattedWithSeparator)
-
-                        // присваиваем данные в блок Death
-                        deathNumbers.text = String(describing: data.death.formattedWithSeparator)
-
-                        // присваиваем данные в блок Recovered
-                        recoveredNumbers.text = String(describing: data.recovered.formattedWithSeparator)
-
-                        // присваиваем данные в блок Active
-                        activeNumbers.text = String(describing: data.active.formattedWithSeparator)
-
-                        // присваиваем данные в блок Serious
-                        seriousNumbers.text = String(describing: data.critical.formattedWithSeparator)
-                    }
-
-                } else {
-
-                    // проверяем текущую страну
-                    if data.country == "All" {
-                        // присваиваем данные в блок Affected
-                        affectedNumbers.text = String(describing: data.affected.formattedWithSeparator)
-
-                        // присваиваем данные в блок Death
-                        deathNumbers.text = String(describing: data.death.formattedWithSeparator)
-
-                        // присваиваем данные в блок Recovered
-                        recoveredNumbers.text = String(describing: data.recovered.formattedWithSeparator)
-
-                        // присваиваем данные в блок Active
-                        activeNumbers.text = String(describing: data.active.formattedWithSeparator)
-
-                        // присваиваем данные в блок Serious
-                        seriousNumbers.text = String(describing: data.critical.formattedWithSeparator)
-                    }
-                }
+        
+        var currentCountryData: [ResultCountry] = []
+        
+        // получаем текущую дату в виде строки
+        let currentDate = Date().toString()
+        
+        if isGlobal {
+            
+            // получаем данные из UserDefaults по всем странам
+            if let data = UserDefaults.standard.data(forKey: "All-\(currentDate)") {
+                currentCountryData = try! JSONDecoder().decode([ResultCountry].self, from: data)
+                print("данные получены по ключу - All-\(currentDate)")
             }
-        } catch {
-            print(error)
+            
+        } else {
+            
+            // получаем данные из UserDefaults по текущей стране
+            if let data = UserDefaults.standard.data(forKey: "\(currentCountry)-\(currentDate)") {
+                currentCountryData = try! JSONDecoder().decode([ResultCountry].self, from: data)
+                print("данные получены по ключу - \(currentCountry)-\(currentDate)")
+            }
         }
+        
+        if currentCountryData.isEmpty == false {
+            // присваиваем данные в блок Affected
+            affectedNumbers.text = currentCountryData[0].total?.formattedWithSeparator
+            
+            // присваиваем данные в блок Death
+            deathNumbers.text = currentCountryData[0].deathsTotal?.formattedWithSeparator
+            
+            // присваиваем данные в блок Recovered
+            recoveredNumbers.text = currentCountryData[0].recovered?.formattedWithSeparator
+            
+            // присваиваем данные в блок Active
+            activeNumbers.text = currentCountryData[0].active?.formattedWithSeparator
+            
+            // присваиваем данные в блок Serious
+            seriousNumbers.text = currentCountryData[0].critical?.formattedWithSeparator
+        } else {
+            self.postError()
+        }
+        
+
+        
+        
+       
     }
+    
 }

@@ -1,80 +1,111 @@
-////
-////  SetYesterdayData.swift
-////  Covid-19-Statistic
-////
-////  Created by Dmitrii Lobanov on 27.10.2021.
-////
 //
-//import Foundation
+//  SetYesterdayData.swift
+//  Covid-19-Statistic
 //
-//extension StatVC {
+//  Created by Dmitrii Lobanov on 27.10.2021.
 //
-//    func setYesterdayData() {
-//
-//        // получаем вчерашнюю и позавчерашнюю даты в формате yyyy-mm-dd
-//        // форматер для дат
-//        let formatter = DateFormatter()
-//        formatter.timeZone = TimeZone(abbreviation: "UTC")
-//        formatter.dateFormat = "yyyy-MM-dd"
-//        var calendar = Calendar.current
-//        calendar.timeZone = .current
-//
-//        // текущая дата
-//        let timezone = TimeZone.current
-//        let seconds = TimeInterval(timezone.secondsFromGMT(for: Date()))
-//        let currentDate = Date(timeInterval: seconds, since: Date())
-//
-//        // вчерашняя дата
-//        guard let yesterday = calendar.date(byAdding: .day, value: -1, to: currentDate) else {
-//            print("не удалось получить вчерашнюю дату")
-//            return }
-//
-//        // позавчерашняя дата
-//        guard let beforeYesterday = calendar.date(byAdding: .day, value: -2, to: currentDate) else {
-//            print("не удалось получить вчерашнюю дату")
-//            return }
-//
-//        // форматируем даты
-//        let yesterdayDate = formatter.string(from: yesterday)
-//        let beforeYesterdayDate = formatter.string(from: beforeYesterday)
-//
-//        // получаем данные из UserDefaults за сегодня и вчера
-////        let dataYesterday = setTodayTotalData(date: yesterdayDate, isGlobal: false)
-////        let dataBeforeYesterday = setTodayTotalData(date: beforeYesterdayDate, isGlobal: false)
-//
-//        // присваиваем данные в блок Affected
-//        if (dataYesterday.affected - dataBeforeYesterday.affected) > 0 {
-//            affectedNumbers.text = "+ " + String(describing: (dataYesterday.affected - dataBeforeYesterday.affected).formattedWithSeparator)
-//        } else {
-//            affectedNumbers.text = "- " + String(describing: ((dataYesterday.affected - dataBeforeYesterday.affected) * -1).formattedWithSeparator)
-//        }
-//
-//        // присваиваем данные в блок Death
-//        if (dataYesterday.death - dataBeforeYesterday.death) > 0 {
-//            deathNumbers.text = "+ " + String(describing: (dataYesterday.death - dataBeforeYesterday.death).formattedWithSeparator)
-//        } else {
-//            deathNumbers.text = "- " + String(describing: ((dataYesterday.death - dataBeforeYesterday.death) * -1).formattedWithSeparator)
-//        }
-//
-//        // присваиваем данные в блок Recovered
-//        if (dataYesterday.recovered - dataBeforeYesterday.recovered) > 0 {
-//            recoveredNumbers.text = "+ " + String(describing: (dataYesterday.recovered - dataBeforeYesterday.recovered).formattedWithSeparator)
-//        } else {
-//            recoveredNumbers.text = "- " + String(describing: ((dataYesterday.recovered - dataBeforeYesterday.recovered) * -1).formattedWithSeparator)
-//        }
-//
-//        // присваиваем данные в блок Active
-//        if (dataYesterday.active - dataBeforeYesterday.active) > 0 {
-//            activeNumbers.text = "+ " + String(describing: (dataYesterday.active - dataBeforeYesterday.active).formattedWithSeparator)
-//        } else {
-//            activeNumbers.text = "- " + String(describing: ((dataYesterday.active - dataBeforeYesterday.active) * -1).formattedWithSeparator)
-//        }
-//
-//        // присваиваем данные в блок Serious
-//        if (dataYesterday.critical - dataBeforeYesterday.critical) > 0 {
-//            seriousNumbers.text = "+ " + String(describing: (dataYesterday.critical - dataBeforeYesterday.critical).formattedWithSeparator)
-//        } else {
-//            seriousNumbers.text = "- " + String(describing: ((dataYesterday.critical - dataBeforeYesterday.critical) * -1).formattedWithSeparator)
-//        }
-//    }
-//}
+
+import Foundation
+
+extension StatVC {
+    
+    func setYesterdayData(isGlobal: Bool) {
+        
+        var currentCountryDataYesterday: [ResultCountry] = []
+        var currentCountryDataDayBeforeYesterday: [ResultCountry] = []
+        
+        if isGlobal {
+            
+            // получаем данные из UserDefaults по всем странам за вчера
+            let calendar = Calendar.current
+            var dayComponent = DateComponents()
+            dayComponent.day = -1
+            guard let yesterdayDate = calendar.date(byAdding: dayComponent, to: Date())?.toString() else { return }
+            
+            if let data = UserDefaults.standard.data(forKey: "All-\(yesterdayDate)") {
+                currentCountryDataYesterday = try! JSONDecoder().decode([ResultCountry].self, from: data)
+                print("данные получены по ключу - All-\(yesterdayDate)")
+            }
+            
+            // получаем данные из UserDefaults по всем странам за позавчера
+            dayComponent.day = -2
+            guard let dayBeforeYesterdayDate = calendar.date(byAdding: dayComponent, to: Date())?.toString() else { return }
+            
+            if let data = UserDefaults.standard.data(forKey: "All-\(dayBeforeYesterdayDate)") {
+                currentCountryDataDayBeforeYesterday = try! JSONDecoder().decode([ResultCountry].self, from: data)
+                print("данные получены по ключу - All-\(dayBeforeYesterdayDate)")
+            }
+            
+            
+            
+        } else {
+            
+            // получаем данные из UserDefaults по текущей стране за вчера
+            let calendar = Calendar.current
+            var dayComponent = DateComponents()
+            dayComponent.day = -1
+            guard let yesterdayDate = calendar.date(byAdding: dayComponent, to: Date())?.toString() else { return }
+            
+            if let data = UserDefaults.standard.data(forKey: "\(currentCountry)-\(yesterdayDate)") {
+                currentCountryDataYesterday = try! JSONDecoder().decode([ResultCountry].self, from: data)
+                print("данные получены по ключу - \(currentCountry)-\(yesterdayDate)")
+            }
+            
+            // получаем данные из UserDefaults по текущей стране за позавчера
+            dayComponent.day = -2
+            guard let dayBeforeYesterdayDate = calendar.date(byAdding: dayComponent, to: Date())?.toString() else { return }
+            
+            if let data = UserDefaults.standard.data(forKey: "\(currentCountry)-\(dayBeforeYesterdayDate)") {
+                currentCountryDataDayBeforeYesterday = try! JSONDecoder().decode([ResultCountry].self, from: data)
+                print("данные получены по ключу - \(currentCountry)-\(dayBeforeYesterdayDate)")
+            }
+            
+        }
+        
+        if currentCountryDataYesterday.isEmpty == false && currentCountryDataDayBeforeYesterday.isEmpty == false {
+            
+            // присваиваем данные в блок Affected
+            
+            if let totalYesterday = currentCountryDataYesterday[0].total, let totalDayBeforeYesterday = currentCountryDataDayBeforeYesterday[0].total {
+                affectedNumbers.text = "+" + (totalYesterday - totalDayBeforeYesterday).formattedWithSeparator
+            }
+            
+            // присваиваем данные в блок Death
+            if let deathYesterday = currentCountryDataYesterday[0].deathsTotal, let deathDayBeforeYesterday = currentCountryDataDayBeforeYesterday[0].deathsTotal {
+                deathNumbers.text =  "+" + (deathYesterday - deathDayBeforeYesterday).formattedWithSeparator
+            }
+            
+            // присваиваем данные в блок Recovered
+            if let recoveredYesterday = currentCountryDataYesterday[0].recovered, let recoveredDayBeforeYesterday = currentCountryDataDayBeforeYesterday[0].recovered {
+                recoveredNumbers.text = "+" + (recoveredYesterday - recoveredDayBeforeYesterday).formattedWithSeparator
+            }
+            
+            // присваиваем данные в блок Active
+            if let activeYesterday = currentCountryDataYesterday[0].active, let activeDayBeforeYesterday = currentCountryDataDayBeforeYesterday[0].active {
+                
+                if (activeYesterday - activeDayBeforeYesterday) > 0 {
+                    activeNumbers.text = "+" + (activeYesterday - activeDayBeforeYesterday).formattedWithSeparator
+                } else if (activeYesterday - activeDayBeforeYesterday) < 0 {
+                    activeNumbers.text = (activeYesterday - activeDayBeforeYesterday).formattedWithSeparator
+                } else {
+                    activeNumbers.text = "0"
+                }
+            }
+            
+            // присваиваем данные в блок Serious
+            if let seriousYesterday = currentCountryDataYesterday[0].critical, let seriousDayBeforeYesterday = currentCountryDataDayBeforeYesterday[0].critical {
+                
+                if (seriousYesterday - seriousDayBeforeYesterday) > 0 {
+                    seriousNumbers.text = "+" + (seriousYesterday - seriousDayBeforeYesterday).formattedWithSeparator
+                } else if (seriousYesterday - seriousDayBeforeYesterday) < 0{
+                    seriousNumbers.text = (seriousYesterday - seriousDayBeforeYesterday).formattedWithSeparator
+                } else {
+                    seriousNumbers.text = "0"
+                }
+            }
+            
+        } else {
+            self.postError()
+        }
+    }
+}

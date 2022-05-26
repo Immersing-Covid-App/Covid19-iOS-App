@@ -7,32 +7,44 @@
 
 import UIKit
 import TinyConstraints
+import Foundation
 
 final class MainVC: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetup()
-
+        
         // получаем и сохраняем все данные
-//            let _ = NetworkManager(country: currentCountry, vc: self)
-            self.errorData()
+        //            let _ = NetworkManager(country: currentCountry, vc: self)
+        self.errorData()
+        
+    
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         UITabBar.appearance().barTintColor = .white
-        let _ = NetworkManager(country: currentCountry, vc: self)
+        
+        // получаем и сохраняем данные по current Country и All
+        let queue = DispatchQueue.global()
+        
+        queue.async {
+//            NetworkManager.shared.getTodayDataForCurrentCountry(country: currentCountry, date: Date())
+//            NetworkManager.shared.getTodayDataForCurrentCountry(country: "All", date: Date())
+            NetworkManager.shared.getAllNeedData()
+        }
+        
     }
-
+    
     // MARK: - UI elements
-
+    
     private lazy var mainScrollView: UIScrollView = {
         let mainScrollView = UIScrollView()
         mainScrollView.backgroundColor = .white
         mainScrollView.delegate = self
         return mainScrollView
     }()
-
+    
     private lazy var mainView: UIView = {
         let mainView = UIView()
         mainView.backgroundColor = UIColor(named: "mainViewColor")
@@ -41,12 +53,12 @@ final class MainVC: UIViewController {
         mainView.clipsToBounds = true
         return mainView
     }()
-
+    
     private lazy var hamburgerMenu: UIView = {
         let hamburgerMenu = UIView()
         return hamburgerMenu
     }()
-
+    
     private lazy var hamburgerFirst: UIView = {
         let hamburgerFirst = UIView()
         hamburgerFirst.backgroundColor = .white
@@ -54,7 +66,7 @@ final class MainVC: UIViewController {
         hamburgerFirst.clipsToBounds = true
         return hamburgerFirst
     }()
-
+    
     private lazy var hamburgerSecond: UIView = {
         let hamburgerSecond = UIView()
         hamburgerSecond.backgroundColor = .white
@@ -62,13 +74,13 @@ final class MainVC: UIViewController {
         hamburgerSecond.clipsToBounds = true
         return hamburgerSecond
     }()
-
+    
     private lazy var bell: UIImageView = {
         let bell = UIImageView()
         bell.image = UIImage(named: "bell")
         return bell
     }()
-
+    
     private lazy var mainTitle: UILabel = {
         let mainTitle = UILabel()
         mainTitle.text = "Covid-19"
@@ -76,7 +88,7 @@ final class MainVC: UIViewController {
         mainTitle.textColor = .white
         return mainTitle
     }()
-
+    
     private lazy var countrySelectView: UIView = {
         let countrySelectView = UIView()
         countrySelectView.backgroundColor = .white
@@ -84,7 +96,7 @@ final class MainVC: UIViewController {
         countrySelectView.clipsToBounds = true
         return countrySelectView
     }()
-
+    
     private lazy var countryFlag: UIImageView = {
         let countryFlag = UIImageView()
         countryFlag.image = UIImage(named: "usaFlag")
@@ -92,7 +104,7 @@ final class MainVC: UIViewController {
         countryFlag.clipsToBounds = true
         return countryFlag
     }()
-
+    
     private lazy var countryName: UILabel = {
         let countryName = UILabel()
         countryName.text = "USA"
@@ -100,13 +112,13 @@ final class MainVC: UIViewController {
         countryName.textColor = .black
         return countryName
     }()
-
+    
     private lazy var countrySelectTriangle: UIImageView = {
         let countrySelectTriangle = UIImageView()
         countrySelectTriangle.image = UIImage(named: "countrySelectTriangle")
         return countrySelectTriangle
     }()
-
+    
     private lazy var mainText: UILabel = {
         let mainText = UILabel()
         mainText.text = "Are you feeling sick?"
@@ -114,7 +126,7 @@ final class MainVC: UIViewController {
         mainText.textColor = .white
         return mainText
     }()
-
+    
     private lazy var mainText2: UILabel = {
         let mainText2 = UILabel()
         mainText2.font = UIFont(name: "Graphik-Regular", size: 14)
@@ -125,7 +137,7 @@ final class MainVC: UIViewController {
         mainText2.attributedText = NSMutableAttributedString(string: "If you feel sick with any of covid-19 symptoms please call or SMS us immediately for help.", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
         return mainText2
     }()
-
+    
     private lazy var callButtonView: UIView = {
         let callButtonView = UIView()
         callButtonView.backgroundColor = UIColor(named: "callButtonColor")
@@ -135,8 +147,8 @@ final class MainVC: UIViewController {
         callButtonView.addGestureRecognizer(gestureCall)
         return callButtonView
     }()
-
-
+    
+    
     private lazy var smsButtonView: UIView = {
         let smsButtonView = UIView()
         smsButtonView.backgroundColor = UIColor(named: "smsButtonColor")
@@ -144,19 +156,19 @@ final class MainVC: UIViewController {
         smsButtonView.clipsToBounds = true
         return smsButtonView
     }()
-
+    
     private lazy var callImage: UIImageView = {
         let callImage = UIImageView()
         callImage.image = UIImage(named: "call")
         return callImage
     }()
-
+    
     private lazy var smsImage: UIImageView = {
         let smsImage = UIImageView()
         smsImage.image = UIImage(named: "sms")
         return smsImage
     }()
-
+    
     private lazy var callText: UILabel = {
         let callText = UILabel()
         callText.text = "Call Now"
@@ -164,7 +176,7 @@ final class MainVC: UIViewController {
         callText.textColor = .white
         return callText
     }()
-
+    
     private lazy var smsText: UILabel = {
         let smsText = UILabel()
         smsText.text = "Send SMS"
@@ -172,25 +184,25 @@ final class MainVC: UIViewController {
         smsText.textColor = .white
         return smsText
     }()
-
+    
     private lazy var preventionImage1: UIImageView = {
         let preventionImage1 = UIImageView()
         preventionImage1.image = UIImage(named: "preventionImage1")
         return preventionImage1
     }()
-
+    
     private lazy var preventionImage2: UIImageView = {
         let preventionImage2 = UIImageView()
         preventionImage2.image = UIImage(named: "preventionImage2")
         return preventionImage2
     }()
-
+    
     private lazy var preventionImage3: UIImageView = {
         let preventionImage3 = UIImageView()
         preventionImage3.image = UIImage(named: "preventionImage3")
         return preventionImage3
     }()
-
+    
     private lazy var preventionText1: UILabel = {
         let preventionText1 = UILabel()
         preventionText1.font = UIFont(name: "Graphik-Medium", size: 14)
@@ -202,7 +214,7 @@ final class MainVC: UIViewController {
         preventionText1.textAlignment = .center
         return preventionText1
     }()
-
+    
     private lazy var preventionText2: UILabel = {
         let preventionText2 = UILabel()
         preventionText2.font = UIFont(name: "Graphik-Medium", size: 14)
@@ -214,7 +226,7 @@ final class MainVC: UIViewController {
         preventionText2.textAlignment = .center
         return preventionText2
     }()
-
+    
     private lazy var preventionText3: UILabel = {
         let preventionText3 = UILabel()
         preventionText3.font = UIFont(name: "Graphik-Medium", size: 14)
@@ -226,12 +238,12 @@ final class MainVC: UIViewController {
         preventionText3.textAlignment = .center
         return preventionText3
     }()
-
+    
     private lazy var preventionView1: UIView = {
         let preventionView1 = UIView()
         return preventionView1
     }()
-
+    
     private lazy var preventionView2: UIView = {
         let preventionView2 = UIView()
         return preventionView2
@@ -240,14 +252,14 @@ final class MainVC: UIViewController {
         let preventionView3 = UIView()
         return preventionView3
     }()
-
+    
     private lazy var preventionTitle: UILabel = {
         let preventionTitle = UILabel()
         preventionTitle.text = "Prevention"
         preventionTitle.font = UIFont(name: "Graphik-Medium", size: 20)
         return preventionTitle
     }()
-
+    
     private lazy var testView: UIView = {
         let testView = UIView()
         testView.layer.cornerRadius = 16
@@ -266,13 +278,13 @@ final class MainVC: UIViewController {
         testView.layer.addSublayer(layer0)
         return testView
     }()
-
+    
     private lazy var testImage: UIImageView = {
         let testImage = UIImageView()
         testImage.image = UIImage(named: "testImage")
         return testImage
     }()
-
+    
     private lazy var testTitle: UILabel = {
         let testTitle = UILabel()
         testTitle.text = "Do your own test!"
@@ -280,7 +292,7 @@ final class MainVC: UIViewController {
         testTitle.textColor = .white
         return testTitle
     }()
-
+    
     private lazy var testText: UILabel = {
         let testText = UILabel()
         testText.font = UIFont(name: "Graphik-Regular", size: 14)
@@ -295,52 +307,52 @@ final class MainVC: UIViewController {
 
 // MARK: - Actions
 extension MainVC {
-
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
+    
     private func viewSetup() {
         view.backgroundColor = UIColor(named: "mainViewColor")
-
+        
         view.addSubviews(mainScrollView)
-
+        
         mainScrollView.addSubviews(mainView, preventionTitle, preventionView1, preventionView2, preventionView3, testView, testImage)
-
+        
         mainView.addSubviews(hamburgerMenu, bell, mainTitle, countrySelectView, mainText, mainText2, callButtonView, smsButtonView)
-
+        
         hamburgerMenu.addSubviews(hamburgerFirst, hamburgerSecond)
-
+        
         countrySelectView.addSubviews(countryFlag, countryName, countrySelectTriangle)
-
+        
         callButtonView.addSubviews(callImage, callText)
-
+        
         smsButtonView.addSubviews(smsImage, smsText)
-
+        
         preventionView1.addSubviews(preventionImage1, preventionText1)
-
+        
         preventionView2.addSubviews(preventionImage2, preventionText2)
-
+        
         preventionView3.addSubviews(preventionImage3, preventionText3)
-
+        
         testView.addSubviews(testTitle, testText)
-
+        
         // MARK: - Constraints
-
+        
         // Main View
         mainScrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         mainScrollView.edgesToSuperview(excluding: .top)
-
+        
         mainView.topToSuperview()
-
+        
         mainView.widthToSuperview()
         mainView.height(316)
-
+        
         hamburgerMenu.height(18)
         hamburgerMenu.width(24)
         hamburgerMenu.leftToSuperview(offset: 24)
         hamburgerMenu.topToSuperview(offset: 24)
-
+        
         hamburgerFirst.width(18)
         hamburgerFirst.height(2.5)
         hamburgerFirst.topToSuperview(offset: 3.75)
@@ -349,111 +361,111 @@ extension MainVC {
         hamburgerSecond.height(2.5)
         hamburgerSecond.bottomToSuperview(offset: -3.75)
         hamburgerSecond.leftToSuperview(offset: 3)
-
+        
         bell.rightToSuperview(offset: -27)
         bell.topToSuperview(offset: 23)
         bell.height(24)
         bell.width(24)
-
+        
         mainTitle.topToBottom(of: hamburgerMenu, offset: 42)
         mainTitle.leftToSuperview(offset: 24)
-
+        
         countrySelectView.width(116)
         countrySelectView.height(40)
         countrySelectView.centerY(to: mainTitle)
         countrySelectView.rightToSuperview(offset: -31)
-
+        
         countryFlag.height(24)
         countryFlag.width(24)
         countryFlag.topToSuperview(offset: 8)
         countryFlag.leftToSuperview(offset: 8)
-
+        
         countryName.centerInSuperview()
-
+        
         countrySelectTriangle.height(8)
         countrySelectTriangle.width(10.68)
         countrySelectTriangle.topToSuperview(offset: 16)
         countrySelectTriangle.rightToSuperview(offset: -16.33)
-
+        
         mainText.topToBottom(of: mainTitle, offset: 47)
         mainText.leftToSuperview(offset: 24)
-
+        
         mainText2.leftToSuperview(offset: 24)
         mainText2.topToBottom(of: mainText, offset: 12)
         mainText2.rightToSuperview(offset: -24)
-
+        
         callButtonView.width(155)
         callButtonView.height(48)
         callButtonView.topToBottom(of: mainText2, offset: 16)
         callButtonView.leftToSuperview(offset: 24)
-
+        
         smsButtonView.width(155)
         smsButtonView.height(48)
         smsButtonView.topToBottom(of: mainText2, offset: 16)
         smsButtonView.rightToSuperview(offset: -24)
-
+        
         callImage.height(24)
         callImage.width(24)
         callImage.topToSuperview(offset: 12)
         callImage.leftToSuperview(offset: 26)
-
+        
         smsImage.height(24)
         smsImage.width(24)
         smsImage.topToSuperview(offset: 12)
         smsImage.leftToSuperview(offset: 26)
-
+        
         callText.centerYToSuperview()
         callText.rightToSuperview(offset: -25)
-
+        
         smsText.centerYToSuperview()
         smsText.rightToSuperview(offset: -20)
-
+        
         // Prevention View
         preventionTitle.topToBottom(of: mainView, offset: 32)
         preventionTitle.leftToSuperview(offset:24)
-
+        
         preventionImage1.height(90)
         preventionImage1.width(90)
-
+        
         preventionImage2.height(90)
         preventionImage2.width(90)
-
+        
         preventionImage3.height(90)
         preventionImage3.width(90)
-
+        
         preventionView1.height(138)
         preventionView1.width(90)
         preventionView1.topToBottom(of: preventionTitle, offset: 24)
         preventionView1.leftToSuperview(offset: 24)
-
+        
         preventionView2.height(138)
         preventionView2.width(90)
         preventionView2.topToBottom(of: preventionTitle, offset: 24)
         preventionView2.centerXToSuperview()
-
+        
         preventionView3.height(138)
         preventionView3.width(90)
         preventionView3.topToBottom(of: preventionTitle, offset: 24)
         preventionView3.rightToSuperview(offset: -24)
-
+        
         preventionImage1.topToSuperview()
         preventionImage1.centerXToSuperview()
-
+        
         preventionImage2.topToSuperview()
         preventionImage2.centerXToSuperview()
-
+        
         preventionImage3.topToSuperview()
         preventionImage3.centerXToSuperview()
-
+        
         preventionText1.topToBottom(of: preventionImage1, offset: 12)
         preventionText1.widthToSuperview()
-
+        
         preventionText2.topToBottom(of: preventionImage2, offset: 12)
         preventionText2.widthToSuperview()
-
+        
         preventionText3.topToBottom(of: preventionImage1, offset: 12)
         preventionText3.widthToSuperview()
-
+        
         // Test view
         testView.height(104)
         testView.topToBottom(of: preventionView1,offset: 44)
@@ -462,15 +474,15 @@ extension MainVC {
         testView.left(to: view, offset: 24)
         testView.right(to: view, offset: -24)
         testView.bottomToSuperview(offset: -24)
-
+        
         testImage.height(116)
         testImage.width(111)
         testImage.bottom(to: testView)
         testImage.left(to: testView, offset: 8)
-
+        
         testTitle.topToSuperview(offset: 16)
         testTitle.rightToSuperview(offset: -39)
-
+        
         testText.topToBottom(of: testTitle, offset: 8)
         testText.rightToSuperview(offset: -14)
         testText.leftToSuperview(offset: 136)

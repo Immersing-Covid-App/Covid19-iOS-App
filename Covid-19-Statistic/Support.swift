@@ -39,12 +39,22 @@ extension Int {
     }
 }
 
-// преобразование данных new
-extension String {
-    func customizeNew() -> Int {
-        let newString = self.dropFirst()
-        return Int(newString) ?? 0
+extension Date {
+    func toString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        let dateStr = dateFormatter.string(from: self)
+        return dateStr
     }
 }
+
+//// преобразование данных new
+//extension String {
+//    func customizeNew() -> Int {
+//        let newString = self.dropFirst()
+//        return Int(newString) ?? 0
+//    }
+//}
 
 
