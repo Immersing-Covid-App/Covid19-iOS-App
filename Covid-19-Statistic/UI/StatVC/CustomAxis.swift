@@ -8,7 +8,7 @@
 import Foundation
 import Charts
 
-final class CustomLeftAxisValueFormatter: IAxisValueFormatter {
+final class CustomLeftAxisValueFormatter: AxisValueFormatter {
     
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         if value == 0 {
@@ -20,7 +20,7 @@ final class CustomLeftAxisValueFormatter: IAxisValueFormatter {
     }
 }
 
-final class CustomXAxisValueFormatter: IAxisValueFormatter {
+final class CustomXAxisValueFormatter: AxisValueFormatter {
 
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
 

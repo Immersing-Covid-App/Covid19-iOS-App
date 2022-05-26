@@ -45,6 +45,7 @@ final class StatVC: UIViewController {
             totalButton.setTitleColor(.white, for: .normal)
 
             setTotalData(isGlobal: isGlobal)
+            setChartData(isGlobal: isGlobal)
 
         }
     }
