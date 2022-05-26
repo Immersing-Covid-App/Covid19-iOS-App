@@ -1,6 +1,0 @@
-framework module Pods_Covid_19_Statistic {
-  umbrella header "Pods-Covid-19-Statistic-umbrella.h"
-
-  export *
-  module * { export * }
-}
