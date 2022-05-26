@@ -36,6 +36,7 @@ extension StatVC {
         
         if currentCountryData.isEmpty == false {
             // присваиваем данные в блок Affected
+            
             affectedNumbers.text = currentCountryData[0].total?.formattedWithSeparator
             
             // присваиваем данные в блок Death

@@ -20,7 +20,7 @@ final class StatVC: UIViewController {
         super.viewDidLoad()
         viewSetup()
         errorData()
-//        setChartData(isGlobal: isGlobal)
+        print(view.frame.size.width)
     }
 
     
@@ -221,7 +221,9 @@ final class StatVC: UIViewController {
     lazy var affectedNumbers: UILabel = {
         let affectedNumbers = UILabel()
         affectedNumbers.text = "0"
-        affectedNumbers.font = UIFont(name: "Graphik-Semibold", size: 24)
+            affectedNumbers.font = UIFont(name: "Graphik-Semibold", size: 24)
+
+        
         affectedNumbers.textColor = .white
         return affectedNumbers
     }()
@@ -500,6 +502,7 @@ extension StatVC {
         
         affectedNumbers.bottomToSuperview(offset: -10)
         affectedNumbers.leftToSuperview(offset: 12)
+        affectedNumbers.rightToSuperview(offset: -12)
         
         deathTitle.topToSuperview(offset: 16)
         deathTitle.leftToSuperview(offset: 12)
