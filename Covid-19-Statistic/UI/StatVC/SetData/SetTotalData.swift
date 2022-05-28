@@ -22,7 +22,7 @@ extension StatVC {
             // получаем данные из UserDefaults по всем странам
             if let data = UserDefaults.standard.data(forKey: "All-\(currentDate)") {
                 currentCountryData = try! JSONDecoder().decode([ResultCountry].self, from: data)
-                print("данные получены по ключу - All-\(currentDate)")
+                //print("данные получены по ключу - All-\(currentDate)")
             }
             
         } else {
@@ -30,7 +30,7 @@ extension StatVC {
             // получаем данные из UserDefaults по текущей стране
             if let data = UserDefaults.standard.data(forKey: "\(currentCountry)-\(currentDate)") {
                 currentCountryData = try! JSONDecoder().decode([ResultCountry].self, from: data)
-                print("данные получены по ключу - \(currentCountry)-\(currentDate)")
+                //print("данные получены по ключу - \(currentCountry)-\(currentDate)")
             }
         }
         

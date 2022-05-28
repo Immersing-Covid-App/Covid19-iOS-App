@@ -221,8 +221,15 @@ final class StatVC: UIViewController {
     lazy var affectedNumbers: UILabel = {
         let affectedNumbers = UILabel()
         affectedNumbers.text = "0"
+        
+        if view.frame.width == 375 {
+            affectedNumbers.font = UIFont(name: "Graphik-Semibold", size: 20)
+        }
+        else if view.frame.width == 390{
+            affectedNumbers.font = UIFont(name: "Graphik-Semibold", size: 22)
+        } else {
             affectedNumbers.font = UIFont(name: "Graphik-Semibold", size: 24)
-
+        }
         
         affectedNumbers.textColor = .white
         return affectedNumbers
@@ -239,7 +246,16 @@ final class StatVC: UIViewController {
     lazy var deathNumbers: UILabel = {
         let deathNumbers = UILabel()
         deathNumbers.text = "0"
-        deathNumbers.font = UIFont(name: "Graphik-Semibold", size: 24)
+        
+        if view.frame.width == 375 {
+            deathNumbers.font = UIFont(name: "Graphik-Semibold", size: 20)
+        }
+        else if view.frame.width == 390{
+            deathNumbers.font = UIFont(name: "Graphik-Semibold", size: 22)
+        } else {
+            deathNumbers.font = UIFont(name: "Graphik-Semibold", size: 24)
+        }
+    
         deathNumbers.textColor = .white
         return deathNumbers
     }()
@@ -284,7 +300,16 @@ final class StatVC: UIViewController {
     lazy var recoveredNumbers: UILabel = {
         let recoveredNumbers = UILabel()
         recoveredNumbers.text = "0"
-        recoveredNumbers.font = UIFont(name: "Graphik-Semibold", size: 12)
+        
+        if view.frame.width == 375 {
+            recoveredNumbers.font = UIFont(name: "Graphik-Semibold", size: 11)
+        }
+        else if view.frame.width == 390{
+            recoveredNumbers.font = UIFont(name: "Graphik-Semibold", size: 12)
+        } else {
+            recoveredNumbers.font = UIFont(name: "Graphik-Semibold", size: 12)
+        }
+        
         recoveredNumbers.textColor = .white
         return recoveredNumbers
     }()
@@ -426,6 +451,7 @@ extension StatVC {
         mainScrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         mainScrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
+        
         mainView.topToSuperview()
         
         mainView.widthToSuperview()
@@ -546,7 +572,12 @@ extension StatVC {
         chartView.leftToSuperview()
         chartView.rightToSuperview()
         chartView.bottomToSuperview()
-        chartView.height(285)
+        
+        if view.frame.height < 844 {
+            chartView.height(285)
+        } else {
+            chartView.height(306)
+        }
         
         chartTitle.topToSuperview(offset: 39)
         chartTitle.leftToSuperview(offset: 24)
@@ -555,6 +586,8 @@ extension StatVC {
         barChart.leftToSuperview(offset: 40)
         barChart.rightToSuperview(offset: -40)
         barChart.bottomToSuperview(offset: -40)
+        
+        
     }
 }
 

@@ -22,7 +22,7 @@ extension StatVC {
             // получаем данные из UserDefaults по всем странам за сегодня
             if let data = UserDefaults.standard.data(forKey: "All-\(currentDate)") {
                 currentCountryDataToday = try! JSONDecoder().decode([ResultCountry].self, from: data)
-                print("данные получены по ключу - All-\(currentDate)")
+                //print("данные получены по ключу - All-\(currentDate)")
             }
             
             // получаем данные из UserDefaults по всем странам за вчера
@@ -33,7 +33,7 @@ extension StatVC {
             
             if let data = UserDefaults.standard.data(forKey: "All-\(yesterdayDate)") {
                 currentCountryDataYesterday = try! JSONDecoder().decode([ResultCountry].self, from: data)
-                print("данные получены по ключу - All-\(yesterdayDate)")
+                //print("данные получены по ключу - All-\(yesterdayDate)")
             }
             
         } else {
@@ -41,7 +41,7 @@ extension StatVC {
             // получаем данные из UserDefaults по текущей стране за сегодня
             if let data = UserDefaults.standard.data(forKey: "\(currentCountry)-\(currentDate)") {
                 currentCountryDataToday = try! JSONDecoder().decode([ResultCountry].self, from: data)
-                print("данные получены по ключу - \(currentCountry)-\(currentDate)")
+                //print("данные получены по ключу - \(currentCountry)-\(currentDate)")
             }
             // получаем данные из UserDefaults по текущей стране за вчера
             let calendar = Calendar.current
@@ -51,7 +51,7 @@ extension StatVC {
             
             if let data = UserDefaults.standard.data(forKey: "\(currentCountry)-\(yesterdayDate)") {
                 currentCountryDataYesterday = try! JSONDecoder().decode([ResultCountry].self, from: data)
-                print("данные получены по ключу - \(currentCountry)-\(yesterdayDate)")
+                //print("данные получены по ключу - \(currentCountry)-\(yesterdayDate)")
             }
             
         }

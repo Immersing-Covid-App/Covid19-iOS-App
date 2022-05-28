@@ -13,6 +13,9 @@ final class CustomLeftAxisValueFormatter: AxisValueFormatter {
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         if value == 0 {
             return "0"
+        } else if value > 0 && value < 1000 {
+            let result = "\(Int(value) / 10)0"
+            return result
         } else {
             let result = "\(Int(value) / 1000)к"
             return result
@@ -56,26 +59,26 @@ final class CustomXAxisValueFormatter: AxisValueFormatter {
         }
 
         func customDate(value: Int) -> String {
-            let date = calendar.date(byAdding: .day, value: value, to: Date())
+            let date = calendar.date(byAdding: .day, value: value - 1, to: Date())
             guard let date = date else { return ""}
             return customFormated(date: date)
         }
 
         switch value {
         case 7:
-            return customDate(value: 0)
+            return customDate(value: 1)
         case 6:
-            return customDate(value: -1)
+            return customDate(value: 0)
         case 5:
-            return customDate(value: -2)
+            return customDate(value: -1)
         case 4:
-            return customDate(value: -3)
+            return customDate(value: -2)
         case 3:
-            return customDate(value: -4)
+            return customDate(value: -3)
         case 2:
-            return customDate(value: -5)
+            return customDate(value: -4)
         case 1:
-            return customDate(value: -6)
+            return customDate(value: -5)
         default:
             return ""
         }

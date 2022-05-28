@@ -24,7 +24,7 @@ extension StatVC {
             
             if let data = UserDefaults.standard.data(forKey: "All-\(yesterdayDate)") {
                 currentCountryDataYesterday = try! JSONDecoder().decode([ResultCountry].self, from: data)
-                print("данные получены по ключу - All-\(yesterdayDate)")
+                //print("данные получены по ключу - All-\(yesterdayDate)")
             }
             
             // получаем данные из UserDefaults по всем странам за позавчера
@@ -33,7 +33,7 @@ extension StatVC {
             
             if let data = UserDefaults.standard.data(forKey: "All-\(dayBeforeYesterdayDate)") {
                 currentCountryDataDayBeforeYesterday = try! JSONDecoder().decode([ResultCountry].self, from: data)
-                print("данные получены по ключу - All-\(dayBeforeYesterdayDate)")
+                //print("данные получены по ключу - All-\(dayBeforeYesterdayDate)")
             }
             
             
@@ -48,7 +48,7 @@ extension StatVC {
             
             if let data = UserDefaults.standard.data(forKey: "\(currentCountry)-\(yesterdayDate)") {
                 currentCountryDataYesterday = try! JSONDecoder().decode([ResultCountry].self, from: data)
-                print("данные получены по ключу - \(currentCountry)-\(yesterdayDate)")
+                //print("данные получены по ключу - \(currentCountry)-\(yesterdayDate)")
             }
             
             // получаем данные из UserDefaults по текущей стране за позавчера
@@ -57,7 +57,7 @@ extension StatVC {
             
             if let data = UserDefaults.standard.data(forKey: "\(currentCountry)-\(dayBeforeYesterdayDate)") {
                 currentCountryDataDayBeforeYesterday = try! JSONDecoder().decode([ResultCountry].self, from: data)
-                print("данные получены по ключу - \(currentCountry)-\(dayBeforeYesterdayDate)")
+                //print("данные получены по ключу - \(currentCountry)-\(dayBeforeYesterdayDate)")
             }
             
         }

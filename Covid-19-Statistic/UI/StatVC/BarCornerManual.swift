@@ -13,7 +13,7 @@ import Foundation
 
 /*
 
-Нужно найти
+Нужно найти в файле BartChartRenderer
 
 
 if !isSingleColor
