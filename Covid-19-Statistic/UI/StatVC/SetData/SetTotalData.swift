@@ -22,7 +22,6 @@ extension StatVC {
             // получаем данные из UserDefaults по всем странам
             if let data = UserDefaults.standard.data(forKey: "All-\(currentDate)") {
                 currentCountryData = try! JSONDecoder().decode([ResultCountry].self, from: data)
-                //print("данные получены по ключу - All-\(currentDate)")
             }
             
         } else {
@@ -30,7 +29,6 @@ extension StatVC {
             // получаем данные из UserDefaults по текущей стране
             if let data = UserDefaults.standard.data(forKey: "\(currentCountry)-\(currentDate)") {
                 currentCountryData = try! JSONDecoder().decode([ResultCountry].self, from: data)
-                //print("данные получены по ключу - \(currentCountry)-\(currentDate)")
             }
         }
         
@@ -50,14 +48,47 @@ extension StatVC {
             
             // присваиваем данные в блок Serious
             seriousNumbers.text = currentCountryData[0].critical?.formattedWithSeparator
-        } else {
-            self.postError()
         }
         
-
+        // если данные за текущую дату еще не поступили
         
-        
-       
+        else {
+            self.postError()
+            // получаем вчерашнюю дату в виде строки
+            
+            let currentDate = Date(timeIntervalSinceNow: -86400).toString()
+            if isGlobal {
+                
+                // получаем данные из UserDefaults по всем странам
+                if let data = UserDefaults.standard.data(forKey: "All-\(currentDate)") {
+                    currentCountryData = try! JSONDecoder().decode([ResultCountry].self, from: data)
+                }
+                
+            } else {
+                
+                // получаем данные из UserDefaults по текущей стране
+                if let data = UserDefaults.standard.data(forKey: "\(currentCountry)-\(currentDate)") {
+                    currentCountryData = try! JSONDecoder().decode([ResultCountry].self, from: data)
+                }
+            }
+            
+            if currentCountryData.isEmpty == false {
+                // присваиваем данные в блок Affected
+                
+                affectedNumbers.text = currentCountryData[0].total?.formattedWithSeparator
+                
+                // присваиваем данные в блок Death
+                deathNumbers.text = currentCountryData[0].deathsTotal?.formattedWithSeparator
+                
+                // присваиваем данные в блок Recovered
+                recoveredNumbers.text = currentCountryData[0].recovered?.formattedWithSeparator
+                
+                // присваиваем данные в блок Active
+                activeNumbers.text = currentCountryData[0].active?.formattedWithSeparator
+                
+                // присваиваем данные в блок Serious
+                seriousNumbers.text = currentCountryData[0].critical?.formattedWithSeparator
+            }
+        }
     }
-    
 }

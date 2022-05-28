@@ -98,6 +98,22 @@ extension StatVC {
             
         } else {
             self.postError()
+            
+            // присваиваем данные в блок Affected
+            
+            affectedNumbers.text = "0"
+            
+            // присваиваем данные в блок Death
+            deathNumbers.text = "0"
+            
+            // присваиваем данные в блок Recovered
+            recoveredNumbers.text = "0"
+            
+            // присваиваем данные в блок Active
+            activeNumbers.text = "0"
+            
+            // присваиваем данные в блок Serious
+            seriousNumbers.text = "0"
         }
     }
 }
