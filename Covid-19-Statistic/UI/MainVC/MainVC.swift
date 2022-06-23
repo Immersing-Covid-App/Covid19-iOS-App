@@ -18,9 +18,11 @@ final class MainVC: UIViewController {
         // получаем и сохраняем все данные
         //            let _ = NetworkManager(country: currentCountry, vc: self)
         self.errorData()
-        
-    
+        addGesture()
+
     }
+    
+
     
     override func viewWillAppear(_ animated: Bool) {
         UITabBar.appearance().barTintColor = .white
@@ -99,7 +101,7 @@ final class MainVC: UIViewController {
     
     private lazy var countryFlag: UIImageView = {
         let countryFlag = UIImageView()
-        countryFlag.image = UIImage(named: "usaFlag")
+        countryFlag.image = UIImage(named: "russia")
         countryFlag.layer.cornerRadius = 12
         countryFlag.clipsToBounds = true
         return countryFlag
@@ -107,8 +109,8 @@ final class MainVC: UIViewController {
     
     private lazy var countryName: UILabel = {
         let countryName = UILabel()
-        countryName.text = "USA"
-        countryName.font = UIFont(name: "Graphik-Medium", size: 14)
+        countryName.text = "РФ"
+        countryName.font = UIFont(name: "Optima-Bold", size: 14)
         countryName.textColor = .black
         return countryName
     }()
@@ -121,20 +123,20 @@ final class MainVC: UIViewController {
     
     private lazy var mainText: UILabel = {
         let mainText = UILabel()
-        mainText.text = "Are you feeling sick?"
-        mainText.font = UIFont(name: "Graphik-Semibold", size: 20)
+        mainText.text = "Плохо себя чувствуете?"
+        mainText.font = UIFont(name: "Optima-Bold", size: 20)
         mainText.textColor = .white
         return mainText
     }()
     
     private lazy var mainText2: UILabel = {
         let mainText2 = UILabel()
-        mainText2.font = UIFont(name: "Graphik-Regular", size: 14)
+        mainText2.font = UIFont(name: "Optima-Regular", size: 14)
         mainText2.textColor = .white
         mainText2.numberOfLines = 0
         var paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.43
-        mainText2.attributedText = NSMutableAttributedString(string: "If you feel sick with any of covid-19 symptoms please call or SMS us immediately for help.", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        mainText2.attributedText = NSMutableAttributedString(string: "Если вы чувствуете себя плохо с любым из симптомов covid-19, немедленно позвоните для получения помощи.", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
         return mainText2
     }()
     
@@ -205,36 +207,36 @@ final class MainVC: UIViewController {
     
     private lazy var preventionText1: UILabel = {
         let preventionText1 = UILabel()
-        preventionText1.font = UIFont(name: "Graphik-Medium", size: 14)
+        preventionText1.font = UIFont(name: "Optima-Regular", size: 14)
         preventionText1.textColor = UIColor(named: "mainViewColor")
         preventionText1.numberOfLines = 0
         var paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineHeightMultiple = 1.17
-        preventionText1.attributedText = NSMutableAttributedString(string: "Avoid close contact", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        paragraphStyle.lineHeightMultiple = 0.8
+        preventionText1.attributedText = NSMutableAttributedString(string: "Избегайте тесного контакта", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
         preventionText1.textAlignment = .center
         return preventionText1
     }()
     
     private lazy var preventionText2: UILabel = {
         let preventionText2 = UILabel()
-        preventionText2.font = UIFont(name: "Graphik-Medium", size: 14)
+        preventionText2.font = UIFont(name: "Optima-Regular", size: 14)
         preventionText2.textColor = UIColor(named: "mainViewColor")
         preventionText2.numberOfLines = 0
         var paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineHeightMultiple = 1.17
-        preventionText2.attributedText = NSMutableAttributedString(string: "Clean your hands often", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        paragraphStyle.lineHeightMultiple = 0.8
+        preventionText2.attributedText = NSMutableAttributedString(string: "Чаще мойте руки", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
         preventionText2.textAlignment = .center
         return preventionText2
     }()
     
     private lazy var preventionText3: UILabel = {
         let preventionText3 = UILabel()
-        preventionText3.font = UIFont(name: "Graphik-Medium", size: 14)
+        preventionText3.font = UIFont(name: "Optima-Regular", size: 14)
         preventionText3.textColor = UIColor(named: "mainViewColor")
         preventionText3.numberOfLines = 0
         var paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineHeightMultiple = 1.17
-        preventionText3.attributedText = NSMutableAttributedString(string: "Wear a facemask", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        paragraphStyle.lineHeightMultiple = 0.8
+        preventionText3.attributedText = NSMutableAttributedString(string: "Носите маску", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
         preventionText3.textAlignment = .center
         return preventionText3
     }()
@@ -255,8 +257,11 @@ final class MainVC: UIViewController {
     
     private lazy var preventionTitle: UILabel = {
         let preventionTitle = UILabel()
-        preventionTitle.text = "Prevention"
-        preventionTitle.font = UIFont(name: "Graphik-Medium", size: 20)
+        preventionTitle.text = "Профилактика"
+        preventionTitle.textColor = UIColor(named: "mainViewColor")
+//        preventionTitle.font = UIFont(name: "Graphik-Medium", size: 20)
+        preventionTitle.font = UIFont(name: "Optima-Bold", size: 20)
+        
         return preventionTitle
     }()
     
@@ -287,22 +292,29 @@ final class MainVC: UIViewController {
     
     private lazy var testTitle: UILabel = {
         let testTitle = UILabel()
-        testTitle.text = "Do your own test!"
-        testTitle.font = UIFont(name: "Graphik-Semibold", size: 18)
+        testTitle.text = "Сделайте тест!"
+        testTitle.font = UIFont(name: "Noteworthy-Bold", size: 18)
         testTitle.textColor = .white
         return testTitle
     }()
     
     private lazy var testText: UILabel = {
         let testText = UILabel()
-        testText.font = UIFont(name: "Graphik-Regular", size: 14)
+        testText.font = UIFont(name: "Noteworthy-Light", size: 14)
         testText.textColor = .white
         testText.numberOfLines = 0
         var paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineHeightMultiple = 1.43
-        testText.attributedText = NSMutableAttributedString(string: "Follow the instructions to do your own test.", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        paragraphStyle.lineHeightMultiple = 0.8
+        testText.attributedText = NSMutableAttributedString(string: "Нажмите для получения подробной информации", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
         return testText
     }()
+    
+    // Метод добавления действия для кнопки информации о тесте
+    func addGesture() {
+        let labelTap = UITapGestureRecognizer(target: self, action: #selector(self.labelTapped(_:)))
+        testText.isUserInteractionEnabled = true
+        testText.addGestureRecognizer(labelTap)
+    }
 }
 
 // MARK: - Actions
@@ -325,7 +337,8 @@ extension MainVC {
         
         countrySelectView.addSubviews(countryFlag, countryName, countrySelectTriangle)
         
-        callButtonView.addSubviews(callImage, callText)
+//        callButtonView.addSubviews(callImage, callText)
+        callButtonView.addSubviews(callImage)
         
         smsButtonView.addSubviews(smsImage, smsText)
         
@@ -352,6 +365,7 @@ extension MainVC {
         hamburgerMenu.width(24)
         hamburgerMenu.leftToSuperview(offset: 24)
         hamburgerMenu.topToSuperview(offset: 24)
+        hamburgerMenu.isHidden = true
         
         hamburgerFirst.width(18)
         hamburgerFirst.height(2.5)
@@ -366,8 +380,9 @@ extension MainVC {
         bell.topToSuperview(offset: 23)
         bell.height(24)
         bell.width(24)
+        bell.isHidden = true
         
-        mainTitle.topToBottom(of: hamburgerMenu, offset: 42)
+        mainTitle.topToBottom(of: hamburgerMenu, offset: 22)
         mainTitle.leftToSuperview(offset: 24)
         
         countrySelectView.width(116)
@@ -385,7 +400,7 @@ extension MainVC {
         countrySelectTriangle.height(8)
         countrySelectTriangle.width(10.68)
         countrySelectTriangle.topToSuperview(offset: 16)
-        countrySelectTriangle.rightToSuperview(offset: -16.33)
+        countrySelectTriangle.rightToSuperview(offset: -15.33)
         
         mainText.topToBottom(of: mainTitle, offset: 47)
         mainText.leftToSuperview(offset: 24)
@@ -394,28 +409,31 @@ extension MainVC {
         mainText2.topToBottom(of: mainText, offset: 12)
         mainText2.rightToSuperview(offset: -24)
         
-        callButtonView.width(155)
+//        callButtonView.width(155)
         callButtonView.height(48)
         callButtonView.topToBottom(of: mainText2, offset: 16)
         callButtonView.leftToSuperview(offset: 24)
+        callButtonView.rightToSuperview(offset: -24)
         
         smsButtonView.width(155)
         smsButtonView.height(48)
         smsButtonView.topToBottom(of: mainText2, offset: 16)
         smsButtonView.rightToSuperview(offset: -24)
+        smsButtonView.isHidden = true
         
         callImage.height(24)
         callImage.width(24)
         callImage.topToSuperview(offset: 12)
-        callImage.leftToSuperview(offset: 26)
+//        callImage.leftToSuperview(offset: 26)
+        callImage.centerInSuperview()
         
         smsImage.height(24)
         smsImage.width(24)
         smsImage.topToSuperview(offset: 12)
         smsImage.leftToSuperview(offset: 26)
         
-        callText.centerYToSuperview()
-        callText.rightToSuperview(offset: -25)
+//        callText.centerYToSuperview()
+//        callText.rightToSuperview(offset: -25)
         
         smsText.centerYToSuperview()
         smsText.rightToSuperview(offset: -20)

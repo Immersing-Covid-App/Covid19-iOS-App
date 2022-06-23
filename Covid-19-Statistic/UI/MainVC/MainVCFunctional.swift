@@ -7,18 +7,25 @@
 
 import UIKit
 
-let number: String = "88007008000"
+let number: String = "122"
 
 extension MainVC {
-
-
-// метод звонка
+    
+    
+    // метод звонка
     @objc func call() {
-            let url = URL(string: "tel://\(number)")!
+        let url = URL(string: "tel://\(number)")!
         UIApplication.shared.open(url)
     }
+    
+    // метод открытия информации о тестах
+    @objc func labelTapped(_ sender: UITapGestureRecognizer) {
+        guard let url = URL(string: "https://xn--80aesfpebagmfblc0a.xn--p1ai/faq/?tags=39") else { return }
+        // Проверка версии IOS
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [ : ] , completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
-
-// метод смс
-
-
+}

@@ -24,9 +24,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let mainVC = MainVC()
         let statVC = StatVC()
         mainVC.tabBarItem.image = UIImage(systemName: "house")
-        mainVC.tabBarItem.title = "Main"
+        mainVC.tabBarItem.title = "Главная"
         statVC.tabBarItem.image = UIImage(systemName: "square.grid.3x2")
-        statVC.tabBarItem.title = "Statistic"
+        statVC.tabBarItem.title = "Статистика"
 
         let tabBarVC = UITabBarController()
         tabBarVC.viewControllers = [mainVC, statVC]

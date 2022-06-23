@@ -20,7 +20,7 @@ final class StatVC: UIViewController {
         super.viewDidLoad()
         viewSetup()
         errorData()
-        print(view.frame.size.width)
+        print(view.frame.size.height)
     }
 
     
@@ -98,8 +98,8 @@ final class StatVC: UIViewController {
     
     private lazy var mainTitle: UILabel = {
         let mainTitle = UILabel()
-        mainTitle.text = "Statistic"
-        mainTitle.font = UIFont(name: "Graphik-Medium", size: 20)
+        mainTitle.text = "Статистика"
+        mainTitle.font = UIFont(name: "Optima-Bold", size: 20)
         mainTitle.textColor = .white
         return mainTitle
     }()
@@ -114,16 +114,16 @@ final class StatVC: UIViewController {
     
     private lazy var myCountryLabel: UILabel = {
         let myCountryLabel = UILabel()
-        myCountryLabel.text = "My country"
-        myCountryLabel.font = UIFont(name: "Graphik-Medium", size: 14)
+        myCountryLabel.text = "Моя страна"
+        myCountryLabel.font = UIFont(name: "Optima-Bold", size: 14)
         myCountryLabel.textColor = UIColor(named: "mainViewColor")
         return myCountryLabel
     }()
     
     private lazy var globalLabel: UILabel = {
         let globalLabel = UILabel()
-        globalLabel.text = "Global"
-        globalLabel.font = UIFont(name: "Graphik-Medium", size: 14)
+        globalLabel.text = "Весь мир"
+        globalLabel.font = UIFont(name: "Optima-Bold", size: 14)
         globalLabel.textColor = .white
         return globalLabel
     }()
@@ -154,8 +154,8 @@ final class StatVC: UIViewController {
     
     private lazy var totalButton: UIButton = {
         let totalButton = UIButton()
-        totalButton.setTitle("Total", for: .normal)
-        totalButton.titleLabel?.font =  UIFont(name: "Graphik-Semibold", size: 14)
+        totalButton.setTitle("Всего", for: .normal)
+        totalButton.titleLabel?.font =  UIFont(name: "Optima-Bold", size: 14)
         totalButton.setTitleColor(.white, for: .normal)
         totalButton.addTarget(self, action: #selector(totalButtonTap), for: .touchUpInside)
         
@@ -164,8 +164,8 @@ final class StatVC: UIViewController {
     
     private lazy var todayButton: UIButton = {
         let todayButton = UIButton()
-        todayButton.setTitle("Today", for: .normal)
-        todayButton.titleLabel?.font =  UIFont(name: "Graphik-Semibold", size: 14)
+        todayButton.setTitle("Сегодня", for: .normal)
+        todayButton.titleLabel?.font =  UIFont(name: "Optima-Bold", size: 14)
         todayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         todayButton.addTarget(self, action: #selector(todayButtonTap), for: .touchUpInside)
         return todayButton
@@ -173,8 +173,8 @@ final class StatVC: UIViewController {
     
     private lazy var yesterdayButton: UIButton = {
         let yesterdayButton = UIButton()
-        yesterdayButton.setTitle("Yesterday", for: .normal)
-        yesterdayButton.titleLabel?.font =  UIFont(name: "Graphik-Semibold", size: 14)
+        yesterdayButton.setTitle("Вчера", for: .normal)
+        yesterdayButton.titleLabel?.font =  UIFont(name: "Optima-Bold", size: 14)
         yesterdayButton.setTitleColor(UIColor(named: "switchColor"), for: .normal)
         yesterdayButton.addTarget(self, action: #selector(yesterdayButtonTap), for: .touchUpInside)
         return yesterdayButton
@@ -212,8 +212,8 @@ final class StatVC: UIViewController {
     
     private lazy var affectedTitle: UILabel = {
         let affectedTitle = UILabel()
-        affectedTitle.text = "Affected"
-        affectedTitle.font = UIFont(name: "Graphik-Medium", size: 14)
+        affectedTitle.text = "Заражений"
+        affectedTitle.font = UIFont(name: "Optima-Bold", size: 14)
         affectedTitle.textColor = .white
         return affectedTitle
     }()
@@ -237,8 +237,8 @@ final class StatVC: UIViewController {
     
     private lazy var deathTitle: UILabel = {
         let affectedTitle = UILabel()
-        affectedTitle.text = "Death"
-        affectedTitle.font = UIFont(name: "Graphik-Medium", size: 14)
+        affectedTitle.text = "Погибло"
+        affectedTitle.font = UIFont(name: "Optima-Bold", size: 14)
         affectedTitle.textColor = .white
         return affectedTitle
     }()
@@ -291,8 +291,8 @@ final class StatVC: UIViewController {
     
     private lazy var recoveredTitle: UILabel = {
         let recoveredTitle = UILabel()
-        recoveredTitle.text = "Recovered"
-        recoveredTitle.font = UIFont(name: "Graphik-Medium", size: 14)
+        recoveredTitle.text = "Спасено"
+        recoveredTitle.font = UIFont(name: "Optima-Bold", size: 14)
         recoveredTitle.textColor = .white
         return recoveredTitle
     }()
@@ -316,8 +316,8 @@ final class StatVC: UIViewController {
     
     private lazy var activeTitle: UILabel = {
         let activeTitle = UILabel()
-        activeTitle.text = "Active"
-        activeTitle.font = UIFont(name: "Graphik-Medium", size: 14)
+        activeTitle.text = "Активные"
+        activeTitle.font = UIFont(name: "Optima-Bold", size: 14)
         activeTitle.textColor = .white
         return activeTitle
     }()
@@ -332,8 +332,8 @@ final class StatVC: UIViewController {
     
     private lazy var seriousTitle: UILabel = {
         let seriousTitle = UILabel()
-        seriousTitle.text = "Serious"
-        seriousTitle.font = UIFont(name: "Graphik-Medium", size: 14)
+        seriousTitle.text = "Опасные"
+        seriousTitle.font = UIFont(name: "Optima-Bold", size: 14)
         seriousTitle.textColor = .white
         return seriousTitle
     }()
@@ -350,15 +350,20 @@ final class StatVC: UIViewController {
         let chartView = UIView()
         chartView.backgroundColor = .white
         chartView.layer.cornerRadius = 40
-        chartView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        let heightScreen = view.frame.height
+        if heightScreen > 900 {
+            chartView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        } else {
+            chartView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        }
         chartView.clipsToBounds = true
         return chartView
     }()
     
     private lazy var chartTitle: UILabel = {
         let chartTitle = UILabel()
-        chartTitle.text = "Daily New Cases"
-        chartTitle.font = UIFont(name: "Graphik-Medium", size: 20)
+        chartTitle.text = "Заражений по дням"
+        chartTitle.font = UIFont(name: "Optima-Bold", size: 20)
         chartTitle.textColor = UIColor(named: "mainViewColor")
         return chartTitle
     }()
@@ -461,6 +466,7 @@ extension StatVC {
         hamburgerMenu.width(24)
         hamburgerMenu.leftToSuperview(offset: 24)
         hamburgerMenu.topToSuperview(offset: 24)
+        hamburgerMenu.isHidden = true
         
         hamburgerFirst.width(18)
         hamburgerFirst.height(2.5)
@@ -475,8 +481,9 @@ extension StatVC {
         bell.topToSuperview(offset: 23)
         bell.height(24)
         bell.width(24)
+        bell.isHidden = true
         
-        mainTitle.topToBottom(of: hamburgerMenu, offset: 42)
+        mainTitle.topToBottom(of: hamburgerMenu, offset: 0)
         mainTitle.leftToSuperview(offset: 24)
         
         // SwitchView
