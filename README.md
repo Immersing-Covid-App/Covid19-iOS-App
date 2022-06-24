@@ -6,3 +6,4 @@
 Стек:
 - UIKit + TinyConstraints
 - URLSession + UserDefaults
+- Backend: Vapor + Postgres (в приватных репозиториях)
